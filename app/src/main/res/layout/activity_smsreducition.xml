@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:itcast="http://schemas.android.com/apk/res/cn.edu.gdmec.t00385.android2016.myguard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graye5"
+    android:orientation="vertical"
+ >
+    <include layout="@layout/titlebar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+        <cn.edu.t00385.android2016.myguard.m9advancedtools.widget.MyCircleProgress
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mcp_reducition"
+            android:layout_gravity="center"
+            android:text="一键还原"
+            android:textColor="@color/bright_red"
+            itcast:circleColor="@color/white"
+            itcast:progressColor="@color/light_pink"
+            ></cn.edu.t00385.android2016.myguard.m9advancedtools.widget.MyCircleProgress>
+    </LinearLayout>
+
+
+</LinearLayout>
