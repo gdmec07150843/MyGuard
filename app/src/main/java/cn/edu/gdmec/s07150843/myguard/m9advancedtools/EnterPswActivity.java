@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.SMSReducitionActivity;
 
 public class EnterPswActivity extends AppCompatActivity implements View.OnClickListener {
