@@ -56,5 +56,16 @@ public class AppLockDao {
         }
         return packages;
     }
+
+    public boolean delete(String packageName) {
+        SQLiteDatabase db=openHelper.getWritableDatabase();
+        int rownum=db.delete("applock","packagename=?",new String[]{packageName});
+        if(rownum==0){
+            return false;
+        }else{
+            context.getContentResolver().notifyChange(uri,null);
+            return true;
+        }
+    }
 }
 
