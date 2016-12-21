@@ -1,13 +1,59 @@
 package cn.edu.gdmec.s07150843.myguard.m2theftguard.adapter;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.content.Context;
+import android.support.v4.widget.ViewDragHelper;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
 
-public class ContactAdapter extends AppCompatActivity {
+import java.util.List;
+
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.entity.ContactInfo;
+
+public class ContactAdapter extends BaseAdapter {
+    private List<ContactInfo> contactInfos;
+    private Context context;
+
+    public ContactAdapter(List<ContactInfo> contactInfos, Context context){
+        super();
+        this.contactInfos = contactInfos;
+        this.context = context;
+    }
+    @Override
+    public int getCount() {
+        return contactInfos.size();
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_adapter);
+    public Object getItem(int position) {
+        return contactInfos.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder = null;
+        if (convertView == null){
+            convertView =View.inflate(context, R.layout.item_list_contact_select, null);
+            holder = new ViewHolder();
+            holder.mNameTV = (TextView)convertView.findViewById(R.id.tv_name);
+            holder.mPhoneTV = (TextView)convertView.findViewById(R.id.tv_name);
+            convertView.setTag(holder);
+        }else{
+            holder = (ViewHolder)convertView.getTag();
+        }
+        holder.mNameTV.setText(contactInfos.get(position).name);
+        holder.mPhoneTV.setText(contactInfos.get(position).phone);
+        return convertView;
+    }
+
+    static class ViewHolder{
+        TextView mNameTV;
+        TextView mPhoneTV;
     }
 }
