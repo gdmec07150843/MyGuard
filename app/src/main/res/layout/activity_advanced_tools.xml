@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-<include layout="@android:/titlabar"/>
+<include layout="@layout:/titlebar"/>
     <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView
         android:layout_width="match_parent"
         android:layout_height="55dp"
