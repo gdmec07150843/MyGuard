@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.edu.gdmec.s07150843.myguard">
 
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -11,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".m1home.HomeActivity" />
+        <activity android:name=".m1home.HomeActivity"/>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,17 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".m9advancedtools.AdvancedToolsActivity" />
-        <activity android:name=".m9advancedtools.AppLockActivity" />
-        <activity android:name=".m9advancedtools.EnterPswActivity" />
-        <activity android:name=".m9advancedtools.NumBelongtoActivity" />
-        <activity android:name=".m9advancedtools.SMSBackupActivity" />
-        <activity android:name=".m9advancedtools.SMSReducitionActivity" />
-
-        <service
-            android:name=".m9advancedtools.service.AppLockService"
-            android:enabled="true"
-            android:exported="true"></service>
     </application>
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 </manifest>
