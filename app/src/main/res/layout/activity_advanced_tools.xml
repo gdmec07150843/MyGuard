@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom_android="http://schemas.android.com/apk/res/android"
+    xmlns:custom_android="http://schemas.android.com/apk/res/cn.edu.gdmec.s07150843.myguard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
 <include layout="@layout/titlebar"/>
+
     <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -16,7 +18,14 @@
         >
 
     </cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView>
-
+     <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView
+         android:layout_width="match_parent"
+         android:layout_height="55dp"
+         android:id="@+id/advanceview_smsbackup"
+         custom_android:desc="短信备份"
+         android:layout_marginTop="3dp"
+         android:src="@drawable/sms_backup"
+         ></cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView>
 
     <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView
         android:layout_width="match_parent"
@@ -24,7 +33,7 @@
         custom_android:desc="程序锁"
         android:layout_marginTop="3dp"
         android:gravity="center_vertical"
-        android:src="@drawable/numofbelongto"
+        android:src="@drawable/programoflock"
         android:id="@+id/advanceview_applock"
         >
 
