@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import cn.edu.gdmec.s07150843.myguard.R;
 
@@ -20,8 +21,12 @@ public class AdvancedToolsActivity extends AppCompatActivity implements View.OnC
 
     private void initView() {
          findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
-        ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
+         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
+        ((TextView)findViewById(R.id.tv_title)).setText("高级工具");
+        mLeftImgv.setOnClickListener(this);
+        mLeftImgv.setImageResource(R.drawable.back);
 
+        findViewById(R.id.advanceview_applock).setOnClickListener();
 
     }
 

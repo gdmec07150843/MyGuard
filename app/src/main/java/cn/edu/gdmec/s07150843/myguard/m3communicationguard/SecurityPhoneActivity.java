@@ -150,7 +150,7 @@ implements View.OnClickListener {
     @Override
     public void onClick(View v) {
     switch (v.getId()){
-        case R.id.imgv_leftbtn;
+        case R.id.imgv_leftbtn:
             finish();
             break;
         case R.id.btn_addblacknumber:

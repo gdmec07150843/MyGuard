@@ -64,7 +64,7 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
                 String inputpsw=mPswET.getText().toString().trim();
                 if(TextUtils.isEmpty(inputpsw)){
                     startAnim();
-                    Toast.makeText(this,"请输入密码",0).show();
+                    Toast.makeText(this,"请输入密码",Toast.LENGTH_SHORT).show();
                     return;
                 }else{
                     if (!TextUtils.isEmpty(password)) {
