@@ -50,7 +50,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:lineSpacingMultiplier="1.5"
-            android:text="@string/_sim_sim_bin_info"
+            android:text="@string/_sim_sim_bind_info"
             android:textColor="@color/purple"
             android:textScaleX="1.1"/>
     </LinearLayout>
@@ -79,6 +79,6 @@
         android:background="@color/purple"
         android:gravity="center">
 
-        <include layout="@layout/setup_radiogroup"
+        <include layout="@layout/setup_radiogroup"/>
     </LinearLayout>
 </LinearLayout>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom_android="http://schemas.android.com/apk/res/cn.edu.gdmec.s07150843.myguard"
+    xmlns:custom_android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-<include layout="@android:/titlabar"/>
+<include layout="@layout/titlebar"/>
     <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView
         android:layout_width="match_parent"
         android:layout_height="55dp"

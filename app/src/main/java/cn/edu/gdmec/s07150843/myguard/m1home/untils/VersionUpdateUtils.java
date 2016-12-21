@@ -24,7 +24,7 @@ import cn.edu.gdmec.s07150843.myguard.m1home.HomeActivity;
 import cn.edu.gdmec.s07150843.myguard.m1home.entity.VersionEntity;
 
 /**
- * Created by 姚永楠 on 2016/12/19.
+ * Created by 姚永楠 刘裕涛on 2016/12/19.
  */
 public class VersionUpdateUtils {
     private static final int MESSAGE_NET_EEOR=101;

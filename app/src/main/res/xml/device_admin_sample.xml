@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-</PreferenceScreen>
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--3 说明安全策略、锁屏、清除数据、重置密码-->
+    <uses-policies>
+        <reset-password />
+        <force-lock />
+        <wipe-data />
+    </uses-policies>
+</device-admin>
