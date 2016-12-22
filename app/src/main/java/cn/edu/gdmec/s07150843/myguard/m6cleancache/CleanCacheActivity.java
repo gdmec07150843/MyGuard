@@ -47,7 +47,7 @@ public class CleanCacheActivity extends AppCompatActivity implements View. OnCli
                     }
                     break;
             }
-                    };
+                    }
             };
 
             private TextView mSizeTV;
@@ -119,7 +119,7 @@ public class CleanCacheActivity extends AppCompatActivity implements View. OnCli
             ImageView mLeftImgv = (ImageView) findViewById (R. id.imgv_leftbtn) ;
             mLeftImgv. setOnClickListener (this);
             mLeftImgv. setImageResource (R.drawable.back) ;
-            animation = (AnimationDrawable) findViewById (R. id. imgv_trashbin_cacheclean). getBackground ;
+            animation = (AnimationDrawable) findViewById (R. id. imgv_trashbin_cacheclean). getBackground();
             animation. setOneShot (false) ;
             animation. start () ;
             mMemoryTV = (TextView) findViewById(R. id. tv_cleancache_memory) ;
@@ -128,6 +128,14 @@ public class CleanCacheActivity extends AppCompatActivity implements View. OnCli
             mFinishCleanFL = (FrameLayout) findViewById(R. id. fl_finishclean) ;
             mSizeTV = (TextView) findViewById(R. id. tv_cleanmemorysize) ;
             findViewById(R. id. btn_finish_cleancache) . setOnClickListener (this) ;
+            /**以上在R.java上添加了
+//            public static int imgv_trashbin_cacheclean;
+//            public static int tv_cleancache_memory;
+//            public static int tv_cleancache_memoryunit;
+//            public static int fl_cleancache;
+//            public static int fl_finishclean;
+//            public static int tv_cleanmemorysize;
+//            public static int btn_finish_cleancache;*/
 
         }
 

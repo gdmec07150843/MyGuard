@@ -43,7 +43,7 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View. O
     private boolean flag;
     private boolean isStop;
     private TextView mScanAppTV;
-    private Button mCancleStn;
+    private Button mCancleBtn;
     private ImageView mScanningIcon;
     private RotateAnimation rani;
     private ListView mScanListView;
@@ -71,7 +71,7 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View. O
                 case SCAN_FINISH:
                     mScanAppTV.setText("扫描完成！");
                     mScanningIcon.clearAnimation();
-                    mCancleStn.setBackgroundResource(R.drawable.scan_complete);
+                    mCancleBtn.setBackgroundResource(R.drawable.scan_complete);
                     saveScanTime();
                     break;
             }
@@ -159,6 +159,13 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View. O
             }.start();
         }
 
+//    这里在R.java里里面添加了
+//    public static int tv_titie;
+//    public static int tv_scanprocess;
+//    public static int tv_scansapp;
+//    public static int btn_canclescan;
+//    public static int lv_scanapps;
+//    public static int imgv_scanningicon;
                     private void initView() {
                         findViewById(R.id.r1_titlebar).setBackgroundColor(
                                 getResources().getColor(R.color.light_blue));
@@ -168,8 +175,8 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View. O
                         mLeftImgv.setImageResource(R.drawable.back);
                         mProcessTV = (TextView) findViewById(R. id. tv_scanprocess);
                         mScanAppTV = (TextView) findViewById(R. id. tv_scansapp);
-                        mCancleStn = (Button) findViewById(R.id.btn_canclescan);
-                        mCancleStn.setOnClickListener(this);
+                        mCancleBtn = (Button) findViewById(R.id.btn_canclescan);
+                        mCancleBtn.setOnClickListener(this);
                         mScanListView = (ListView) findViewById(R. id. lv_scanapps);
                         adapter = new ScanVirusAdapter(mScanAppInfos, this);
                         mScanListView.setAdapter(adapter);
@@ -202,13 +209,14 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View. O
                                 // 取消扫描
                                 flag = false;
                                 // 更换背景图片
-                                mCancleStn.setBackgroundResource(R.drawable.restart_scan_btn);
+                                mCancleBtn.setBackgroundResource(R.drawable.restart_scan_btn);
                             } else if (isStop) {
                                 startAnim();
                                 //重新扫描
                                 scanVirus();
                                 //更换背景图片
-                                mCancleStn.setBackgroundResource(R.drawable.cancle_scan_btn_selector);
+                                //补充各模块drawable
+                                mCancleBtn.setBackgroundResource(R.drawable.cancle_scan_btn_selector);
                                 }
                                 break;
                             }

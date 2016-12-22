@@ -75,7 +75,7 @@ public class AntiVirusDao {
                 values. put ("md5", md5) ;
                 values.put("desc", desc);
                 values.put("type", 6);
-                values. put ("name", "Android. Hack. i22hkt. a")
+                values. put ("name", "Android. Hack. i22hkt. a");
                 db.insert("datable", null, values);
                 db. close();
 

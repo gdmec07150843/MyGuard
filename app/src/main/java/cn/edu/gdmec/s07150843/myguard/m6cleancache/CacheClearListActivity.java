@@ -97,13 +97,13 @@ public class CacheClearListActivity extends AppCompatActivity implements View. O
         private void initView() {
             findViewById(R.id.rl_titlebar).setBackgroundColor(
                     getResources(). getColor (R. color. rose_red)) ;
-            ImageView mLeftlmgv = (ImageView) findViewById(R. id. imgv_leftbtn);
+            ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
             mLeftImgv.setOnClickListener(this);
             mLeftImgv.setImageResource(R.drawable.back);
             ((TextView) findViewById(R.id.tv_title)).setText("缓存扫描") ;
             mRecomandTV = (TextView) findViewById(R. id. tv_recommend_clean);
             mCanCleanTV = (TextView) findViewById(R.id.tv_can_clean);
-            mCacheLV = (ListView) findViewById(R. id. lv_scancache);
+            mCacheLV = (ListView) findViewById(R. id. lv_scancache);//在R.java上添加 public static int tv_recommend_clean;public static int tv_can_clean;public static int lv_scancache;public static int btn_cleanall;public static int imgv_broom;
             mCacheStn = (Button) findViewById(R. id. btn_cleanall);
             mCacheStn.setOnClickListener(this);
             animation = (AnimationDrawable) findViewById(R.id.imgv_broom)
@@ -196,11 +196,11 @@ public class CacheClearListActivity extends AppCompatActivity implements View. O
                  throws RemoteException {
                  long cachesize = pStats.cacheSize;
                  if (cachesize >= 0) {
-                 CacheInfo cachelnfo = new CacheInfo();
+                 CacheInfo cacheInfo = new CacheInfo();
                  cacheInfo.cacheSize = cachesize;
                  cacheInfo.packagename = info.packageName;
                  cacheInfo. appName = info.applicationInfo.loadLabel(pm).toString();
-                 cacheInfo. applcon = info.applicationInfo.loadIcon(pm);
+                 cacheInfo. appIcon = info.applicationInfo.loadIcon(pm);
                  cacheInfos.add(cacheInfo);
                  cacheMemory += cachesize;
                              }

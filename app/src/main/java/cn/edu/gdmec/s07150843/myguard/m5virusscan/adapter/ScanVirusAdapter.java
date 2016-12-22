@@ -56,10 +56,10 @@ public class ScanVirusAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        ScanAppInfo scanAppinfo = mScanAppInfos.get(position);
+        ScanAppInfo scanAppInfo = mScanAppInfos.get(position);
         if (!scanAppInfo.isVirus) {
             holder.mScanIconImgv.setBackgroundResource(R.drawable.blue_right_icon);
-            holder.mAppNameTV.setTextColor(context.getResources().getColor(R.color.black));
+            holder.mAppNameTV.setTextColor(context.getResources().getColor(R.color.black));//在R.java上添加了 public static int black;public static int bright_red;
             holder.mAppNameTV.setText(scanAppInfo.appName);
         } else {
             holder.mAppNameTV.setTextColor(context.getResources().getColor(R.color.bright_red));

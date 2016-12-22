@@ -56,7 +56,7 @@ public class VirusScanActivity extends AppCompatActivity implements View. OnClic
                     InputStream is = getAssets().open(dbname);
                     FileOutputStream fos = openFileOutput(dbname, MODE_PRIVATE);
                     byte[] buffer = new byte[1024];
-                    int len = 0;
+                    int len =0;
                     while ((len = is.read(buffer)) != -1) {
                         fos.write(buffer, 0, len);
                     }
@@ -69,25 +69,33 @@ public class VirusScanActivity extends AppCompatActivity implements View. OnClic
             } . start();
         }
 
+
+//    这里在R.java文件里面添加了
+//    public static int rl_titlebar;
+//    public static int imgv_leftbtn;
+//    public static int tv_title;
+//    public static int tv_lastscantime;
+//    public static int rl_allscanvirus;
+
     private void initView() {
-        findViewById (R. id. rl_titlebar). setBackgroundColor (
-                getResources(). getColor (R. color. light_blue)) ;
-        ImageView mLeftImgv = (ImageView) findViewById (R. id. imgv_leftbtn) ;
-        ( (TextView) findViewById (R. id. tv_title)). setText ("病毒查杀") ;
+        findViewById (R. id.rl_titlebar). setBackgroundColor (
+                getResources(). getColor (R. color.light_blue)) ;
+        ImageView mLeftImgv = (ImageView) findViewById (R. id.imgv_leftbtn) ;
+        ( (TextView) findViewById (R. id.tv_title)). setText ("病毒查杀") ;
         mLeftImgv. setOnClickListener (this) ;
         mLeftImgv. setImageResource (R. drawable. back) ;
         mLastTimeTV = (TextView) findViewById (R. id. tv_lastscantime) ;
-        findViewById (R. id. rl allscanvirus). setOnClickListener (this) ;
+        findViewById (R. id.rl_allscanvirus). setOnClickListener (this) ;
 
     }
 
     @Override
     public void onClick (View v) {
         switch (v. getId()) {
-            case R. id. imgv_leftbtn:
+            case R. id.imgv_leftbtn:
             finish() ;
                 break;
-            case R. id. rl_allscanvirus :
+            case R. id.rl_allscanvirus :
             startActivity (new Intent (this, VirusScanSpeedActivity. class)) ;
                 break;
         }
