@@ -15,7 +15,8 @@ import cn.edu.gdmec.s07150843.myguard.R;
 public class AppLockActivity  extends FragmentActivity implements View.OnClickListener{
       private ViewPager mAppViewPager;
       List<Fragment> mFragments=new ArrayList<Fragment>();
-      private TextView mLockTVV;
+      private TextView mLockTV;
+    private TextView mUnLockTV;
      private View slideLockView;
     private View sildeUnLockView;
 
