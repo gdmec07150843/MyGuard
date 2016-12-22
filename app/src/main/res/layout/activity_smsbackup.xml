@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
              android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="white"
+            android:textColor="@color/white"
             itcast:circleColor="@color/bright_red"
             itcast:progressColor="@color/light_pink"
             android:background="@drawable/add"

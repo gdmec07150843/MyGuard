@@ -1,13 +1,13 @@
 package cn.edu.gdmec.s07150843.myguard.m2theftguard;
 
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import cn.edu.gdmec.s07150843.myguard.R;
 public class SetUp4Activity extends BaseSetUpActivity {
 
     private TextView mStatusTV;
@@ -21,7 +21,7 @@ public class SetUp4Activity extends BaseSetUpActivity {
     }
 
     private void initView(){
-        ((RadioButton)findViewById(R.id.rb_four).setChecked(true));
+        ((RadioButton)findViewById(R.id.rb_four)).setChecked(true);
         mStatusTV = (TextView)findViewById(R.id.tv_setup4_status);
         mToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

@@ -108,7 +108,7 @@ implements View.OnClickListener {
                 getResources().getColor(R.color.bright_purple)
         );
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
-        ((TextView)findViewById(R.id.tv_title).setText("通讯卫士"));
+        ((TextView)findViewById(R.id.tv_title)).setText("通讯卫士");
         mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
         mHaveBlackNumber=(FrameLayout)findViewById(R.id.fl_haveblacknumber);
@@ -119,7 +119,7 @@ implements View.OnClickListener {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
         switch (scrollState){
-            case AbsListView.OnScrollListener.SCROLL_STATE_IDLE;
+            case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:
                 //获取最后一个可见条目
                 int lastVisiblePosition=mListView
                         .getLastVisiblePosition();

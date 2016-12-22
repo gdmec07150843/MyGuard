@@ -23,7 +23,7 @@ public class SetUp3Activity extends BaseSetUpActivity implements View.OnClickLis
 
     /*初始化控件*/
     private void initView(){
-        ((RadioButton)findViewById(R.id.rb_third).setChecked(true));
+        ((RadioButton)findViewById(R.id.rb_third)).setChecked(true);
         findViewById(R.id.btn_addcontact).setOnClickListener(this);
         mInputPhone = (EditText)findViewById(R.id.et_inputphone);
         String safephone = sp.getString("safephone", null);

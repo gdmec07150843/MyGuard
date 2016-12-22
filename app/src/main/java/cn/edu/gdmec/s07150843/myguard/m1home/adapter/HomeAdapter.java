@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import cn.edu.gdmec.s07150843.myguard.R;
-
+import cn.edu.gdmec.s07150843.myguard.R;
 /**
  * Created by 姚永楠 on 2016/12/19.
  */

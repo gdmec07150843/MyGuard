@@ -1,7 +1,6 @@
 package cn.edu.gdmec.s07150843.myguard.m2theftguard.adapter;
 
 import android.content.Context;
-import android.support.v4.widget.ViewDragHelper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,6 +8,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.entity.ContactInfo;
 
 public class ContactAdapter extends BaseAdapter {

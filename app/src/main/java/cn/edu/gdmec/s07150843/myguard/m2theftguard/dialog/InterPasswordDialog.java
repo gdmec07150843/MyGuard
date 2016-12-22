@@ -2,7 +2,6 @@ package cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,8 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
+import cn.edu.gdmec.s07150843.myguard.R;
 /*确认密码对话框*/
 public class InterPasswordDialog extends Dialog implements android.view.View.OnClickListener {
     /*对话框标题*/
@@ -21,7 +19,7 @@ public class InterPasswordDialog extends Dialog implements android.view.View.OnC
     /*确认按钮*/
     private Button mOKBtn;
     /*取消按钮*/
-    private Bundle mCancleBtn;
+    private Button mCancleBtn;
     /*回调接口*/
     private MyCallBack myCallBack;
     private Context context;

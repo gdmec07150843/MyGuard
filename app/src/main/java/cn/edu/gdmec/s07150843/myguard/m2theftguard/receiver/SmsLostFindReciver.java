@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.service.GPSLocationService;
-
+import cn.edu.gdmec.s07150843.myguard.R;
 public class SmsLostFindReciver extends BroadcastReceiver {
 
     private static final String TAG = SmsLostFindReciver.class.getSimpleName();

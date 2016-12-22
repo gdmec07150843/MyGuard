@@ -44,7 +44,7 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
         try {
             mAppIcon.setImageDrawable(pm.getApplicationInfo(packagename, 0).loadIcon(pm));
 
-            mAppNameTV.setText(pm.getApplicationInfo(packagename, 0).loadLabel(pm).toString())
+            mAppNameTV.setText(pm.getApplicationInfo(packagename, 0).loadLabel(pm).toString());
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
