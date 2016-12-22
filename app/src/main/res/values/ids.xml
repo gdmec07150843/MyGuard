@@ -44,4 +44,24 @@
     <item name="btn_addblacknumber" type="id" />
     <item name="iv_blacknumbers" type="id" />
     <item name="vp_applock" type="id" />
+    <item name="tv_lastscantime" type="id" />
+    <item name="rl_allscanvirus" type="id" />
+    <item name="tv_scanprocess" type="id" />
+    <item name="tv_scansapp" type="id" />
+    <item name="btn_canclescan" type="id" />
+    <item name="lv_scanapps" type="id" />
+    <item name="imgv_scanningicon" type="id" />
+    <item name="tv_titie" type="id" />
+    <item name="tv_recommend_clean" type="id" />
+    <item name="tv_can_clean" type="id" />
+    <item name="lv_scancache" type="id" />
+    <item name="btn_cleanall" type="id" />
+    <item name="imgv_broom" type="id" />
+    <item name="imgv_trashbin_cacheclean" type="id" />
+    <item name="tv_cleancache_memory" type="id" />
+    <item name="tv_cleancache_memoryunit" type="id" />
+    <item name="fl_cleancache" type="id" />
+    <item name="fl_finishclean" type="id" />
+    <item name="tv_cleanmemorysize" type="id" />
+    <item name="btn_finish_cleancache" type="id" />
 </resources>
