@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -19,6 +21,10 @@ import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.SetUpPasswordDialog;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.receiver.MyDeviceAdminReciever;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
+import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
+import cn.edu.gdmec.s07150843.myguard.m4appmanager.AppManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m5virusscan.VirusScanActivity;
+import cn.edu.gdmec.s07150843.myguard.m6cleancache.CacheClearListActivity;
 
 public class HomeActivity extends AppCompatActivity {
     /**声明GridView，该控件类是于ListView*/
@@ -40,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
 
         gv_home=(GridView)findViewById(R.id.gv_home);
         gv_home.setAdapter(new HomeAdapter(HomeActivity.this));
-     /* gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+      gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
          @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -64,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
                     case 4:
                         startActivity(CacheClearListActivity.class);
                         break;
-                    case 5:
+                  /*  case 5:
                         startActivity(ProcessManagerActivity.class);
                         break;
                     case 6:
@@ -75,12 +81,12 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case 8:
                         startActivity(SettingsActivity.class);
-                        break;
+                        break;*/
                 }
             }
 
 
-        });*/
+        });
         policyManager=(DevicePolicyManager)getSystemService(DEVICE_POLICY_SERVICE);
         componentName=new ComponentName(this,MyDeviceAdminReciever.class);
         boolean active=policyManager.isAdminActive(componentName);
@@ -94,7 +100,7 @@ public class HomeActivity extends AppCompatActivity {
     private void showSetUpPswdDialog(){
         final SetUpPasswordDialog setUpPasswordDialog=new SetUpPasswordDialog(HomeActivity.this);
         setUpPasswordDialog.setCallBack(new SetUpPasswordDialog.MyCallBack(){
-
+            @Override
             public void ok(){
                 String firstPwsd=setUpPasswordDialog.mFirstPWDET.getText().toString().trim();
                 String affirmPwsd=setUpPasswordDialog.mAffirmET.getText().toString().trim();
@@ -112,6 +118,7 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(HomeActivity.this, "密码不能为空!", Toast.LENGTH_SHORT).show();
                 }
             }
+            @Override
             public void cancle(){
                 setUpPasswordDialog.dismiss();
             }
@@ -124,6 +131,7 @@ public class HomeActivity extends AppCompatActivity {
         final String password=getPassword();
         final InterPasswordDialog mInPswdDialog=new InterPasswordDialog(HomeActivity.this);
         mInPswdDialog.setCallBack(new InterPasswordDialog.MyCallBack(){
+            @Override
             public void confirm(){
                 if(TextUtils.isEmpty(mInPswdDialog.getPassword())){
                     Toast.makeText(HomeActivity.this,"密码不能为空!",Toast.LENGTH_SHORT).show();
@@ -135,6 +143,7 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(HomeActivity.this,"密码有误，请重新输入！",Toast.LENGTH_SHORT).show();
                 }
             }
+            @Override
             public void cancle(){
                 mInPswdDialog.dismiss();
             }

@@ -16,7 +16,6 @@ import cn.edu.gdmec.s07150843.myguard.m1home.untils.VersionUpdateUtils;
 public class SplashActivity extends AppCompatActivity{
     private TextView mVersionTV;
     private String mVersion;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
