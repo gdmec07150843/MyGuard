@@ -14,6 +14,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
+import cn.edu.gdmec.s07150843.myguard.App;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.entity.AppInfo;
 
 /**
@@ -25,7 +26,11 @@ public class AppLockAdapter extends BaseAdapter{
 
 
 
-
+public AppLockAdapter(List<AppInfo> appInfos,Context context){
+ super();
+ this.appInfos=appInfos;
+ this.context=context;
+}
  @Override
  public int getCount() {
   return appInfos.size();
@@ -49,6 +54,20 @@ public class AppLockAdapter extends BaseAdapter{
 
   }else{
    holder=new ViewHolder();
+   converView=View.inflate(context, R.layout.item_list_applock,null);
+   holder.mAppIconImgv=(ImageView)converView.findViewById(R.id.imgv_appicon);
+   holder.mAppNameTV=(TextView)converView.findViewById(R.id.tv_appname);
+   holder.mLockIcon=(ImageView)converView.findViewById(R.id.imgv_lock);
+   converView.setTag(holder);
+  }
+  final AppInfo appInfo=appInfos.get(position);
+  holder.mAppIconImgv.setImageDrawable(appInfo.icon);
+  holder.mAppNameTV.setText(appInfo.appName);
+  if(appInfo.isLock){
+   holder.mLockIcon.setBackgroundResource(R.drawable.applock_icon);
+
+  }else {
+   holder.mLockIcon.setBackgroundResource(R.drawable.appunlock_icon);
   }
   return converView;
  }

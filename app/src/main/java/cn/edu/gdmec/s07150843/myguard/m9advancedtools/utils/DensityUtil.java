@@ -7,13 +7,13 @@ import android.content.Context;
  */
 public class DensityUtil {
 
-    public static int dip2px(Context context, float dxValue){
+    public static int dip2px(Context context, float dpValue){
         try {
             final float scale = context.getResources().getDisplayMetrics().density;
-            return (int) (dxValue * scale + 0.5f);
+            return (int) (dpValue * scale + 0.5f);
         }catch (Exception e){
             e.printStackTrace();
         }
-        return (int) dxValue;
+        return (int) dpValue;
     }
 }

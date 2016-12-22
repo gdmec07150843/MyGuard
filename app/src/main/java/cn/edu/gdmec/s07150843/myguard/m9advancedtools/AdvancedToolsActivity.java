@@ -1,5 +1,6 @@
 package cn.edu.gdmec.s07150843.myguard.m9advancedtools;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,13 +27,37 @@ public class AdvancedToolsActivity extends AppCompatActivity implements View.OnC
         mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
 
-        findViewById(R.id.advanceview_applock).setOnClickListener();
+        findViewById(R.id.advanceview_applock).setOnClickListener(this);
+        findViewById(R.id.advanceview_numbelongs).setOnClickListener(this);
+        findViewById(R.id.advanceview_smsbackup).setOnClickListener(this);
+        findViewById(R.id.advanceview_smsreducition).setOnClickListener(this);
 
     }
 
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
+         switch (v.getId()){
+             case R.id.imgv_leftbtn:
+                 finish();
+                 break;
+             case R.id.advanceview_applock:
+                 startActivity(AppLockActivity.class);
+                 break;
+             case R.id.advanceview_numbelongs:
+                 startActivity(NumBelongtoActivity.class);
+                 break;
+             case R.id.advanceview_smsbackup:
+                 startActivity(SMSBackupActivity.class);
+                 break;
+             case R.id.advanceview_smsreducition:
+                 startActivity(SMSReducitionActivity.class);
+                 break;
+         }
+    }
 
+    private void startActivity(Class<?> cls) {
+        Intent intent=new Intent(this,cls);
+        startActivity(intent);
     }
 }

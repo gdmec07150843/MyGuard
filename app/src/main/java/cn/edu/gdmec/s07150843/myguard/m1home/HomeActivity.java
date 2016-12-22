@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m1home.adapter.HomeAdapter;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
 
 public class HomeActivity extends AppCompatActivity {
     /**声明GridView，该控件类是于ListView*/
@@ -155,7 +156,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     private void savePswd(String affirmPwsd){
         SharedPreferences.Editor edit=msharedPreferences.edit();
-        edit.putString("PhoneAntiTheftPWD",MD5Utils.encode(affirmPwsd));
+        edit.putString("PhoneAntiTheftPWD", MD5Utils.encode(affirmPwsd));
         edit.commit();
     }
 

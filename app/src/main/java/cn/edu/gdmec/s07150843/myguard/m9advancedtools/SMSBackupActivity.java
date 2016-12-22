@@ -8,11 +8,15 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.utils.SmsBackUpUtils;
+import cn.edu.gdmec.s07150843.myguard.m9advancedtools.utils.UIUtils;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.MyCircleProgress;
 
-public class SMSBackupActivity extends AppCompatActivity implements View.OnClickListener{
+public class SMSBackupActivity extends AppCompatActivity implements View.OnClickListener {
 
     private MyCircleProgress mProgressButton;
     private boolean flag = false;
@@ -25,7 +29,7 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
                     mProgressButton.setText("一键备份");
                     break;
             }
-        };
+        }
     };
 
 
@@ -35,52 +39,86 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_smsbackup);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_smsbackup);
-        smsBackUpUtils=new SmsBackUpUtils();
+        smsBackUpUtils = new SmsBackUpUtils();
         initView();
     }
 
     private void initView() {
         findViewById(R.id.r1_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
-        ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
-        ((TextView)findViewById(R.id.tv_title)).setText("短息备份");
+        ImageView mLeftImgv = (ImageView) findViewById(R.id.imgv_leftbtn);
+        ((TextView) findViewById(R.id.tv_title)).setText("短息备份");
         mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
 
-        mProgressButton=(MyCircleProgress) findViewById(R.id.mcp_smsbackup);
+        mProgressButton = (MyCircleProgress) findViewById(R.id.mcp_smsbackup);
         mProgressButton.setOnclickListener(this);
 
     }
 
     @Override
     protected void onDestroy() {
-        flag=false;
+        flag = false;
         smsBackUpUtils.setFlag(flag);
         super.onDestroy();
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.imgv_leftbtn:
                 finish();
                 break;
             case R.id.mcp_smsbackup:
-                if(flag){
-                    flag=false;
+                if (flag) {
+                    flag = false;
                     mProgressButton.setText("一键备份");
-                }else{
-                    flag=true;
+                } else {
+                    flag = true;
                     mProgressButton.setText("取消备份");
 
                 }
                 smsBackUpUtils.setFlag(flag);
                 new Thread() {
                     public void run() {
-                        boolean backUpSms = smsBackUpUtils.backUpSms(SMSBackupActivity.this, new SmsBackUpUtils.BackupStatusCallback() {
+                        try {
+                            boolean backUpSms = smsBackUpUtils.backUpSms(SMSBackupActivity.this, new SmsBackUpUtils.BackupStatusCallback() {
 
-                        });
+                                @Override
+                                public void beforeSmsBackup(int size) {
+                                    if (size <= 0) {
+                                        flag = false;
+                                        smsBackUpUtils.setFlag(flag);
+                                        UIUtils.showToast(SMSBackupActivity.this, "备份成功");
+                                        handler.sendEmptyMessage(CHANGE_BUTTON_TEXT);
+                                    } else {
+                                        mProgressButton.setMax(size);
+                                    }
+                                }
+
+                                @Override
+                                public void onSmsBackup(int process) {
+                                    mProgressButton.setProcess(process);
+                                }
+                            });
+                            if (backUpSms) {
+                                UIUtils.showToast(SMSBackupActivity.this, "备份成功");
+
+                            } else {
+                                UIUtils.showToast(SMSBackupActivity.this, "备份失败");
+                            }
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                            UIUtils.showToast(SMSBackupActivity.this, "文件生成失败");
+                        } catch (IllegalStateException e) {
+                            e.printStackTrace();
+                            UIUtils.showToast(SMSBackupActivity.this, "sd卡不可用或SD卡内存不足");
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
+                }.start();
+                break;
         }
     }
 }
