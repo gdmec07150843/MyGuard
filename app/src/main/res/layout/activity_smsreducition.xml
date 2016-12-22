@@ -21,8 +21,9 @@
             android:text="一键还原"
             android:textColor="@color/bright_red"
             itcast:circleColor="@color/white"
-            itcast:progressColor="@color/light_pink"
-            ></cn.edu.t00385.android2016.myguard.m9advancedtools.widget.MyCircleProgress>
+            itcast:progressColor="@color/light_pink">
+
+        </cn.edu.t00385.android2016.myguard.m9advancedtools.widget.MyCircleProgress>
     </LinearLayout>
 
 
