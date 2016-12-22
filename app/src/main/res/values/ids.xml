@@ -43,4 +43,5 @@
     <item name="fl_noblacknumber" type="id" />
     <item name="btn_addblacknumber" type="id" />
     <item name="iv_blacknumbers" type="id" />
+    <item name="vp_applock" type="id" />
 </resources>
