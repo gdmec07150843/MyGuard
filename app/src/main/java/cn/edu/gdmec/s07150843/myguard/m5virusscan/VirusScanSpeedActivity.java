@@ -221,8 +221,6 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View. O
                                 break;
                             }
                     }
-
-
                     @Override
                     protected void onDestroy() {
                         flag = false;
