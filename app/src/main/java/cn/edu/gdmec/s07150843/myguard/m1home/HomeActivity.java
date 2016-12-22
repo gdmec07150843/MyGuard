@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m1home.adapter.HomeAdapter;
+
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.LostFindActivity;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.SetUpPasswordDialog;
@@ -24,6 +25,9 @@ import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
 import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
 import cn.edu.gdmec.s07150843.myguard.m4appmanager.AppManagerActivity;
 import cn.edu.gdmec.s07150843.myguard.m7processmanger.ProcessManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
+import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
+
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.AdvancedToolsActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -45,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
 
         gv_home=(GridView)findViewById(R.id.gv_home);
         gv_home.setAdapter(new HomeAdapter(HomeActivity.this));
-      /*gv_home.setOnClickListener(new AdapterView.OnItemClickListener(){
+      gv_home.setOnClickListener(new AdapterView.OnItemClickListener(){
 
          @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -85,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
 
-        });*/
+        });
         policyManager=(DevicePolicyManager)getSystemService(DEVICE_POLICY_SERVICE);
         componentName=new ComponentName(this,MyDeviceAdminReciever.class);
         boolean active=policyManager.isAdminActive(componentName);

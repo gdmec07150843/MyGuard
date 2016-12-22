@@ -29,7 +29,7 @@ public class NumBelongtoActivity extends AppCompatActivity implements View.OnCli
     private Handler mHandler=new Handler(){
         public void handleMessage(android.os.Message msg){
 
-        };
+        }
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class NumBelongtoActivity extends AppCompatActivity implements View.OnCli
 
     }
     private void initView() {
-        findViewById(R.id.r1_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
+        findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
         ((TextView)findViewById(R.id.tv_title)).setText("号码归属地查询");
         mLeftImgv.setOnClickListener(this);
@@ -79,7 +79,7 @@ public class NumBelongtoActivity extends AppCompatActivity implements View.OnCli
             case R.id.btn_searchnumbelongto:
                 String phonenumber = mNumET.getText().toString().trim();
                 if (!TextUtils.isEmpty(phonenumber)) {
-                    File file = new File(getFilesDir().dbName);
+                    File file = new File(getFilesDir(),dbName);
                     if (!file.exists() || file.length() <= 0) {
                         copyDB(dbName);
                     }
@@ -87,7 +87,7 @@ public class NumBelongtoActivity extends AppCompatActivity implements View.OnCli
                     String location = NumBelongtoDao.getLocation(phonenumber);
                     mResultTV.setText("归属的: " + location);
                 } else {
-                    Toast.makeText(this, "请输入需要查询的号码", 0).show();
+                    Toast.makeText(this, "请输入需要查询的号码", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -99,7 +99,7 @@ public class NumBelongtoActivity extends AppCompatActivity implements View.OnCli
                 try {
                     File file = new File(getFilesDir(), dbname);
                     if (file.exists()&&file.length()>0){
-                        Log.i("NumBelongtoAcitivity","数据库已存在");
+                        Log.i("NumBelongtoActivity","数据库已存在");
                         return;
                     }
                     InputStream is = getAssets().open(dbname);
@@ -115,7 +115,7 @@ public class NumBelongtoActivity extends AppCompatActivity implements View.OnCli
                     e.printStackTrace();
                 }
 
-            };
+            }
         }.start();
     }
 }

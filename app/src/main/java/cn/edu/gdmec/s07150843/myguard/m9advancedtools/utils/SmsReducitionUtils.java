@@ -29,7 +29,7 @@ public class SmsReducitionUtils {
         this.flag=flag;
     }
     public boolean reducitionSms(Activity context,SmsReducitionCallBack callBack) throws XmlPullParserException,IOException{
-        File file=new File(Environment.getExternalStorageDirectory(),"bacup.xml");
+        File file=new File(Environment.getExternalStorageDirectory(),"backup.xml");
         XmlPullParser parser= Xml.newPullParser();
        parser.setInput(is,"utf-8");
         SmsInfo smsInfo=null;

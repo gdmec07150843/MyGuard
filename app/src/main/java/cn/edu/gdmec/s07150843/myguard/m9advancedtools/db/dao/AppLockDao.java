@@ -17,7 +17,7 @@ import cn.edu.gdmec.s07150843.myguard.m9advancedtools.db.AppLockOpenHelper;
 public class AppLockDao {
     private Context context;
     private AppLockOpenHelper openHelper;
-    private Uri uri= Uri.parse("content://cn.edu.gdmec.t00385.android2016.myguard.applock");
+    private Uri uri= Uri.parse("content://cn.edu.gdmec.s07150843.myguard.applock");
     public AppLockDao(Context context){
         this.context=context;
         openHelper=new AppLockOpenHelper(context);
@@ -49,7 +49,7 @@ public class AppLockDao {
     public List<String> findAll(){
         SQLiteDatabase db=openHelper.getReadableDatabase();
         Cursor cursor =db.query("applock",null,null,null,null,null,null);
-        List<String>packages=new ArrayList<String>();
+        List<String> packages=new ArrayList<String>();
         while (cursor.moveToNext()){
             String string =cursor.getString(cursor.getColumnIndex("packagename"));
             packages.add(string);
