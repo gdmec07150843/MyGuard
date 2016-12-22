@@ -27,7 +27,7 @@ public class AdvancedToolsView extends RelativeLayout{
     }
   public AdvancedToolsView(Context context, AttributeSet attrs,int defStyle){
       super(context,attrs);
-      TypedArray mTypeArray=context.obtainStyledAttributes(attr, R.styleable.AdvancedToolsView_an)
+      TypedArray mTypeArray=context.obtainStyledAttributes(attr, R.styleable.AdvancedToolsView_an);
   }
     private void init(Context context) {
       View view = View.inflate(context,R.layout.ui_advancedtools_view,null);

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
+import cn.edu.gdmec.s07150843.myguard.R;
 public class SetUp2Activity extends BaseSetUpActivity implements View.OnClickListener {
     private TelephonyManager mTlelephonyManager;
     private Button mBindSIMBtn;
@@ -54,7 +54,7 @@ public class SetUp2Activity extends BaseSetUpActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_bind_sim;
+            case R.id.btn_bind_sim:
                 //绑定SIM卡
                 bindSIM();
                 break;

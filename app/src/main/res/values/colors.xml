@@ -8,7 +8,7 @@
     <color name="purple">#5542B8</color>
     <color name="light_gray">#ECEAEB</color>
     <color name="bright__gray">#ECEAEB</color>
-    <color name="black30">#300000000</color>
+    <color name="black30">#30000000</color>
     <color name="dark_gray">#ff999999</color>
     <color name="deep_gray">#ff666666</color>
     <color name="bright_purple">#C218D9</color>
@@ -18,7 +18,7 @@
     <color name="light_rose_red">#F73CA7</color>
     <color name="light_pink">#EC9592</color>
     <color name="transparent">#00000000</color>
-    <color name="bright_blue">#4a4bel</color>
+    <color name="bright_blue">#4a4be1</color>
     <color name="light_blue">#1671CE</color>
     <color name="blue">#2684DC</color>
     <color name="bright_green">#26E587</color>

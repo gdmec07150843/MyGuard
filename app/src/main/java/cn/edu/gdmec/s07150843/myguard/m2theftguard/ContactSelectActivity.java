@@ -17,7 +17,7 @@ import java.util.logging.LogRecord;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.adapter.ContactAdapter;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.entity.ContactInfo;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.ContactInfoParser;
-
+import cn.edu.gdmec.s07150843.myguard.R;
 public class ContactSelectActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ListView mListView;

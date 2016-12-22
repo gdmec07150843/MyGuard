@@ -80,7 +80,7 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
 
                         });
                     }
-                }
+                };
         }
     }
 }

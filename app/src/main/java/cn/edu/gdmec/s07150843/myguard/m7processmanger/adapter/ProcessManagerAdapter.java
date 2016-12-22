@@ -44,12 +44,12 @@ public class ProcessManagerAdapter extends AppCompatActivity implements View. On
         }
     	protected void onResume(){
         	if (adapter != null) {
-            	adapter. notifyDataSetChanged();
+            	adapter.notifyDataSetChanged();
             	}
         	super. onResume() ;
         	}
     	private void	initView() {
-        	findViewById(R. id. rl_titlebar). setBackgroundColor(
+        	findViewById(R.id.rl_titlebar). setBackgroundColor(
                 getResources(). getColor(R. color. bright_green));
         	ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
         	mLeftImgv. setOnClickListener(this);
@@ -150,13 +150,13 @@ public class ProcessManagerAdapter extends AppCompatActivity implements View. On
 //跳转至进程管理设置页面
                 startActivity(new Intent (this, ProcessManagerSettingActivity. class));
                 break;
-            case R. id. btn_selectall:
+            case R.id.btn_selectall:
                 selectAll();
                 break;
-            case R. id. btn_select_inverse:
+            case R.id.btn_select_inverse:
                 inverse ();
                 break;
-            case R. id. btn_cleanprocess:
+            case R.id.btn_cleanprocess:
                 cleanProcess();
                 break;
         }

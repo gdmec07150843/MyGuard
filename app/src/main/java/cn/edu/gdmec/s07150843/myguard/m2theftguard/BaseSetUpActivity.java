@@ -9,6 +9,8 @@ import android.view.MotionEvent;
 import android.view.Window;
 import android.widget.Toast;
 
+import cn.edu.gdmec.s07150843.myguard.R;
+
 public abstract class BaseSetUpActivity extends AppCompatActivity {
 
     public SharedPreferences sp;

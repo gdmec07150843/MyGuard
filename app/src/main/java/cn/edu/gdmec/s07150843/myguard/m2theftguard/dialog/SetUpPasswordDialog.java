@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import cn.edu.gdmec.s07150843.myguard.R;
 public class SetUpPasswordDialog extends Dialog implements View.OnClickListener {
 
     /*标题栏*/
