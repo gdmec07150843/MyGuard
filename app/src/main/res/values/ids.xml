@@ -21,4 +21,27 @@
     <item name="ll_option_app" type="id" />
     <item name="btn_cancle" type="id" />
     <item name="tv_lostfind_protextstatuts" type="id" />
+    <item name="imgv_lock" type="id" />
+    <item name="tv_black_name" type="id" />
+    <item name="tv_black_mode" type="id" />
+    <item name="view_black_icon" type="id" />
+    <item name="view_black_delete" type="id" />
+    <item name="cb_blacknumber_sms" type="id" />
+    <item name="cb_blacknumber_tel" type="id" />
+    <item name="et_balcknumber" type="id" />
+    <item name="et_blackname" type="id" />
+    <item name="add_blacknum_btn" type="id" />
+    <item name="add_fromcontact_btn" type="id" />
+    <item name="tv_runningprocess_num" type="id" />
+    <item name="tv_memory_processmanager" type="id" />
+    <item name="tv_user_runningprocess" type="id" />
+    <item name="lv_runningapps" type="id" />
+    <item name="btn_selectall" type="id" />
+    <item name="btn_select_inverse" type="id" />
+    <item name="btn_cleanprocess" type="id" />
+    <item name="fl_haveblacknumber" type="id" />
+    <item name="fl_noblacknumber" type="id" />
+    <item name="btn_addblacknumber" type="id" />
+    <item name="iv_blacknumbers" type="id" />
+    <item name="vp_applock" type="id" />
 </resources>

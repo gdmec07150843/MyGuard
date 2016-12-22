@@ -79,7 +79,7 @@ public class AppLockActivity  extends FragmentActivity implements View.OnClickLi
         mLockTV.setOnClickListener(this);
         mUnLockTV.setOnClickListener(this);
         slideLockView=findViewById(R.id.view_slide_lock);
-        slideUnLockView=findViewById(R.view_slide_unlock);
+        slideUnLockView=findViewById(R.id.view_slide_unlock);
         AppUnLockFragment unLock=new AppUnLockFragment();
         AppLockFragment lock=new AppLockFragment();
         mFragments.add(unLock);
