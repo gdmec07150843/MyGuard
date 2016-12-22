@@ -16,6 +16,15 @@ import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m1home.adapter.HomeAdapter;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.LostFindActivity;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.InterPasswordDialog;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.SetUpPasswordDialog;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.receiver.MyDeviceAdminReciever;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
+import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
+import cn.edu.gdmec.s07150843.myguard.m4appmanager.AppManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m7processmanger.ProcessManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m9advancedtools.AdvancedToolsActivity;
 
 public class HomeActivity extends AppCompatActivity {
     /**声明GridView，该控件类是于ListView*/
@@ -36,9 +45,9 @@ public class HomeActivity extends AppCompatActivity {
 
         gv_home=(GridView)findViewById(R.id.gv_home);
         gv_home.setAdapter(new HomeAdapter(HomeActivity.this));
-        gv_home.setOnClickListener(new AdapterView.OnItemClickListener(){
+      /*gv_home.setOnClickListener(new AdapterView.OnItemClickListener(){
 
-            @Override
+         @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
@@ -76,7 +85,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
 
-        });
+        });*/
         policyManager=(DevicePolicyManager)getSystemService(DEVICE_POLICY_SERVICE);
         componentName=new ComponentName(this,MyDeviceAdminReciever.class);
         boolean active=policyManager.isAdminActive(componentName);
@@ -88,7 +97,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
     private void showSetUpPswdDialog(){
-        final SetUpPasswordDialog setUpPasswordDialog=new SetUpasswordDialog(HomeActivity.this);
+        final SetUpPasswordDialog setUpPasswordDialog=new SetUpPasswordDialog(HomeActivity.this);
         setUpPasswordDialog.setCallBack(new SetUpPasswordDialog.MyCallBack(){
 
             public void ok(){
@@ -101,11 +110,11 @@ public class HomeActivity extends AppCompatActivity {
                         showInterPswdDialog();
 
                     }else{
-                        Toast.makeText(HomeActivity.this,"两次密码不一致！",0).show();
+                        Toast.makeText(HomeActivity.this,"两次密码不一致！",Toast.LENGTH_SHORT).show();
 
                     }
                 }else {
-                    Toast.makeText(HomeActivity.this, "密码不能为空!", 0).show();
+                    Toast.makeText(HomeActivity.this, "密码不能为空!", Toast.LENGTH_SHORT).show();
                 }
             }
             public void cancle(){
@@ -122,13 +131,13 @@ public class HomeActivity extends AppCompatActivity {
         mInPswdDialog.setCallBack(new InterPasswordDialog.MyCallBack(){
             public void confirm(){
                 if(TextUtils.isEmpty(mInPswdDialog.getPassword())){
-                    Toast.makeText(HomeActivity.this,"密码不能为空!",0).show();
+                    Toast.makeText(HomeActivity.this,"密码不能为空!",Toast.LENGTH_SHORT).show();
                 }else if(password.equals(MD5Utils.encode(mInPswdDialog.getPassword()))){
                     mInPswdDialog.dismiss();
                     startActivity(LostFindActivity.class);
                 }else{
                     mInPswdDialog.dismiss();
-                    Toast.makeText(HomeActivity.this,"密码有误，请重新输入！",0).show();
+                    Toast.makeText(HomeActivity.this,"密码有误，请重新输入！",Toast.LENGTH_SHORT).show();
                 }
             }
             public void cancle(){
@@ -155,7 +164,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     private void savePswd(String affirmPwsd){
         SharedPreferences.Editor edit=msharedPreferences.edit();
-        edit.putString("PhoneAntiTheftPWD",MD5Utils.encode(affirmPwsd));
+        edit.putString("PhoneAntiTheftPWD", MD5Utils.encode(affirmPwsd));
         edit.commit();
     }
 

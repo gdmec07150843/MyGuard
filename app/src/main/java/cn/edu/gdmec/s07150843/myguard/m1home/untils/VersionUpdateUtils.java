@@ -17,6 +17,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
@@ -30,7 +31,7 @@ import cn.edu.gdmec.s07150843.myguard.m1home.HomeActivity;
 import cn.edu.gdmec.s07150843.myguard.m1home.entity.VersionEntity;
 
 /**
- * Created by 姚永楠 on 2016/12/19.
+ * Created by 姚永楠 刘裕涛on 2016/12/19.
  */
 public class VersionUpdateUtils {
     private static final int MESSAGE_NET_EEOR=101;
