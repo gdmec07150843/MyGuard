@@ -114,7 +114,7 @@ implements View.OnClickListener {
         mHaveBlackNumber=(FrameLayout)findViewById(R.id.fl_haveblacknumber);
         mNoBlackNumber=(FrameLayout)findViewById(R.id.fl_noblacknumber);
         findViewById(R.id.btn_addblacknumber).setOnClickListener(this);
-        mListView=(ListView)findViewById(R.id.iv_blacknumbers);
+        mListView=(ListView)findViewById(R.id.lv_blacknumbers);
         mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -126,9 +126,8 @@ implements View.OnClickListener {
                 //如果当前条目是最后一个 增查询更多的数据
                 if (lastVisiblePosition==pageBlackNumber.size()-1){
                     pagenumber++;
-                    if (pagenumber*pagesize>=totalNumber){
-                        Toast.makeText(SecurityPhoneActivity.this,
-                                "没有更多的数据了",0).show();
+                    if (pagenumber * pagesize >=totalNumber){
+                        Toast.makeText(SecurityPhoneActivity.this,"没有更多的数据了",Toast.LENGTH_SHORT).show();
                     }else {
                         pageBlackNumber.addAll(dao.getPageBlackNumber(
                             pagenumber,pagesize

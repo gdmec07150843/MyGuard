@@ -26,7 +26,7 @@ public class MyUtils {
     public static void installApk(Activity activity){
         Intent intent=new Intent("android.intent.action.VIEW");
         intent.addCategory("android.intent.category.DEFAULT");
-        Intent.setDataAndType(Uri.fromFile(new File("/mnt/sdcard/mobilesafe2.0.apk")),"application/vnd.android.package-archive");
+        intent.setDataAndType(Uri.fromFile(new File("/mnt/sdcard/mobilesafe2.0.apk")),"application/vnd.android.package-archive");
         activity.startActivityForResult(intent,0);
     }
 }
