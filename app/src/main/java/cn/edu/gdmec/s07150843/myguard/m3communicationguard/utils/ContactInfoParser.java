@@ -23,6 +23,7 @@ public class ContactInfoParser {
         List<ContactInfo>infos=new ArrayList<ContactInfo>();
         Cursor cursor=resolver.query(uri,new String[]{"contact_id"},
                 null,null,null);
+
         while (cursor.moveToNext()){
             String id=cursor.getString(0);
             if(id!=null){
