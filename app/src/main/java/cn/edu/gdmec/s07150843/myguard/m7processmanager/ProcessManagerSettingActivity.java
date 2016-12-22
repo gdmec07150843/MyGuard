@@ -1,4 +1,4 @@
-package cn.edu.gdmec.s07150843.myguard.m7processmanger;
+package cn.edu.gdmec.s07150843.myguard.m7processmanager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import cn.edu.gdmec.s07150843.myguard.R;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.service.AutoKillProcessService;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.utils.SystemInfoUtils;
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.service.AutoKillProcessService;
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.utils.SystemInfoUtils;
 
 /**
  * Created by hasee on 2016/12/21.

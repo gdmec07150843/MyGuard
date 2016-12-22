@@ -1,4 +1,4 @@
-package cn.edu.gdmec.s07150843.myguard.m7processmanger.utils;
+package cn.edu.gdmec.s07150843.myguard.m7processmanager.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -10,8 +10,8 @@ import android.os.Debug;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.entity.TaskInfo;
+import cn.edu.gdmec.s07150843.myguard.R;
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.entity.TaskInfo;
 
 /**
  * Created by hasee on 2016/12/21.
@@ -31,8 +31,8 @@ public class TaskInfoParser {
             taskInfo.appMemory = memsize;
             try {
                 PackageInfo packInfo = pm.getPackageInfo(packname, 0);
-                Drawable icon = packInfo.applicationInfo.loadlcon(pm);
-                taskInfo.applcon = icon;
+                Drawable icon = packInfo.applicationInfo.loadIcon(pm);
+                taskInfo.appIcon = icon;
                 String appname = packInfo.applicationInfo.loadLabel(pm).toString();
                 taskInfo.appName = appname;
                 if ((ApplicationInfo.FLAG_SYSTEM & packInfo.applicationInfo.flags) != 0) {

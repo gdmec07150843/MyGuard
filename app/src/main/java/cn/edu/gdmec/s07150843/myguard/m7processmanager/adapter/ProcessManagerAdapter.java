@@ -1,4 +1,4 @@
-package cn.edu.gdmec.s07150843.myguard.m7processmanger.adapter;
+package cn.edu.gdmec.s07150843.myguard.m7processmanager.adapter;
 
 import android. app. ActivityManager;
 import android. content. Intent;
@@ -16,9 +16,9 @@ import android. widget. Toast;
 import java. util. ArrayList;
 import java. util. List;
 import cn.edu.gdmec.s07150843.myguard.R;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.ProcessManagerActivity;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.entity.TaskInfo;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.utils.SystemInfoUtils;
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.ProcessManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.entity.TaskInfo;
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.utils.SystemInfoUtils;
 
 /**
  * Created by hasee on 2016/12/21.

@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m1home.adapter.HomeAdapter;
-
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.LostFindActivity;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.SetUpPasswordDialog;
@@ -24,10 +23,8 @@ import cn.edu.gdmec.s07150843.myguard.m2theftguard.receiver.MyDeviceAdminRecieve
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
 import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
 import cn.edu.gdmec.s07150843.myguard.m4appmanager.AppManagerActivity;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.ProcessManagerActivity;
-import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
-import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
 
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.ProcessManagerActivity;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.AdvancedToolsActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -109,7 +106,7 @@ public class HomeActivity extends AppCompatActivity {
                 String affirmPwsd=setUpPasswordDialog.mAffirmET.getText().toString().trim();
                 if(!TextUtils.isEmpty(firstPwsd)&&!TextUtils.isEmpty(affirmPwsd)){
                     if(firstPwsd.equals(affirmPwsd)){
-                        savePwsd(affirmPwsd);
+                        savePswd(affirmPwsd);
                         setUpPasswordDialog.dismiss();
                         showInterPswdDialog();
 
@@ -122,7 +119,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
             public void cancle(){
-                setUpPasswordDialog.dissmiss();
+                setUpPasswordDialog.dismiss();
             }
         });
         setUpPasswordDialog.setCancelable(true);
@@ -145,7 +142,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
             public void cancle(){
-                mInPswdDialog.dissmiss();
+                mInPswdDialog.dismiss();
             }
         });
         mInPswdDialog.setCancelable(true);
