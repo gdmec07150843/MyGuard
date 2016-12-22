@@ -11,23 +11,30 @@ import android.os.IBinder;
 /**
  * Created by hasee on 2016/12/21.
  */
-public class AutoKillProcessService extends Service {
+public class AutoKillProcessService extends Service{
     private ScreenLockReceiver receiver;
 
-   	public IBinder onBind(Intent intent) {
+    public IBinder onBind(Intent intent) {
         return null;
         }
-    public void onCreate(){
-        super. onCreate() ;
+
+
+    public void onCreate() {
+        super.onCreate();
         receiver = new ScreenLockReceiver();
-        registerReceiver(receiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+        registerReceiver(receiver, new IntentFilter(Intent. ACTION_SCREEN_OFF));
         }
-    public void	onDestroy(){
+
+
+
+
+    public void	onDestroy()	{
         unregisterReceiver (receiver);
         receiver = null;
         super. onDestroy() ;
         }
     class ScreenLockReceiver	extends BroadcastReceiver {
+
         public void onReceive(Context context, Intent intent) {
             ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
             for(ActivityManager. RunningAppProcessInfo info: am. getRunningAppProcesses()){
@@ -36,7 +43,7 @@ public class AutoKillProcessService extends Service {
                 }
             }
 
-    }
+	}
+  	}
 
 
-}

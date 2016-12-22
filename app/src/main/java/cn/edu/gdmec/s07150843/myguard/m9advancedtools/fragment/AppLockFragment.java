@@ -60,7 +60,7 @@ public class AppLockFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
        View view =inflater.inflate(R.layout.fragment_applock,null);
         mLockTV =(TextView)view.findViewById(R.id.tv_lock);
-        mLockLV=(TextView)view.findViewById(R.id.lv_lock);
+        mLockLV=(ListView)view.findViewById(R.id.lv_lock);
         return view;
     }
 

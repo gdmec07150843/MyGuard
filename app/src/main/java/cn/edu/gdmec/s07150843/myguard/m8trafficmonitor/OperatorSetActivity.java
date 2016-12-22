@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
+import cn.edu.gdmec.s07150843.myguard.R;
 /**
  * Created by hasee on 2016/12/22.
  */

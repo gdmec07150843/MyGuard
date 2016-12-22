@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.SMSReducitionActivity;
 
@@ -32,10 +34,10 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        requestWindowFeature(Window.FEATURE_N0_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_enter_psw);
         sp = getSharedPreferences("config", MODE_PRIVATE);
-        password = sp.getString("PhoneAntiTheftPWD",nu11);
+        password = sp.getString("PhoneAntiTheftPWD",null);
         Intent intent = getIntent();
         packagename = intent.getStringExtra("packagename");
         PackageManager pm = getPackageManager();
@@ -43,7 +45,7 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
         try {
             mAppIcon.setImageDrawable(pm.getApplicationInfo(packagename, 0).loadIcon(pm));
 
-            mAppNameTV.setText(pm.getApplicationInfo(packagename, 0).loadLabel(pm).toString())
+            mAppNameTV.setText(pm.getApplicationInfo(packagename, 0).loadLabel(pm).toString());
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -64,7 +66,7 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
                 String inputpsw=mPswET.getText().toString().trim();
                 if(TextUtils.isEmpty(inputpsw)){
                     startAnim();
-                    Toast.makeText(this,"请输入密码",0).show();
+                    Toast.makeText(this,"请输入密码",Toast.LENGTH_SHORT).show();
                     return;
                 }else{
                     if (!TextUtils.isEmpty(password)) {
@@ -78,12 +80,18 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
                         }else{
                             startAnim();
 
-                            Toast. makeText(this,"密码不正确!",0).show();
+                            Toast. makeText(this,"密码不正确!",Toast.LENGTH_SHORT).show();
                             return;
                         }
                     }
                 }
                 break;
         }
+
+    }
+
+    private void startAnim() {
+        Animation animation=Animation.loadAnimation(this,R.anim.shake);
+        mEnterPswLL.startAnimation(animation);
     }
 }

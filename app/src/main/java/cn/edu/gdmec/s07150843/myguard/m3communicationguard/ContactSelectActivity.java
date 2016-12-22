@@ -84,7 +84,7 @@ implements View.OnClickListener{
     @Override
     public void onClick(View view) {
     switch (view.getId()){
-        case R.id.imgv_leftbtn;
+        case R.id.imgv_leftbtn:
             finish();
             break;
     }

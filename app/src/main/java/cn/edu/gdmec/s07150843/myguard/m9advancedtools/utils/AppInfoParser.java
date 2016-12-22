@@ -18,7 +18,7 @@ public class AppInfoParser {
         PackageManager pm=context.getPackageManager();
         List<PackageInfo> packInfos=pm.getInstalledPackages(0);
         List<AppInfo> appinfos=new ArrayList<AppInfo>();
-        for(PackageInfo packageInfo:packInfos){
+        for(PackageInfo packInfo:packInfos){
             AppInfo appinfo=new AppInfo();
             String packname=packInfo.packageName;
             appinfo.packageName=packname;

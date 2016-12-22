@@ -11,8 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        >
+        android:gravity="center">
         <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.MyCircleProgress
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,9 +20,15 @@
             android:text="一键还原"
             android:textColor="@color/bright_red"
             itcast:circleColor="@color/white"
+
+            itcast:progressColor="@color/light_pink">
+
+        </cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.MyCircleProgress>
+
             itcast:progressColor="@color/light_pink"
-            ></cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.MyCircleProgress>
+            ></LinearLayout>
+
     </LinearLayout>
 
 
-</LinearLayout>
+

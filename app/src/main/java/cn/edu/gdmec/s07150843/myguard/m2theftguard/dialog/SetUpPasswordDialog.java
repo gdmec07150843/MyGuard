@@ -2,13 +2,13 @@ package cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import cn.edu.gdmec.s07150843.myguard.R;
 public class SetUpPasswordDialog extends Dialog implements View.OnClickListener {
 
     /*标题栏*/

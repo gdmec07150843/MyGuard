@@ -1,7 +1,6 @@
 package cn.edu.gdmec.s07150843.myguard.m2theftguard;
 
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -10,15 +9,16 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import cn.edu.gdmec.s07150843.myguard.R;
 public class SetUp2Activity extends BaseSetUpActivity implements View.OnClickListener {
-    private TelephonyManager mTlelephonyManager;
+    private TelephonyManager mTelephonyManager;
     private Button mBindSIMBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_up2);
-        mTlelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
         initView();
     }
 
@@ -54,7 +54,7 @@ public class SetUp2Activity extends BaseSetUpActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_bind_sim;
+            case R.id.btn_bind_sim:
                 //绑定SIM卡
                 bindSIM();
                 break;
@@ -64,7 +64,7 @@ public class SetUp2Activity extends BaseSetUpActivity implements View.OnClickLis
     /*绑定sim卡*/
     private void bindSIM(){
         if (!isBind()){
-            String simSerialNumber = mTelephonyManager.getSimSeriaNumber();
+            String simSerialNumber = mTelephonyManager.getSimSerialNumber();
             SharedPreferences.Editor edit = sp.edit();
             edit.putString("sim", simSerialNumber);
             edit.commit();

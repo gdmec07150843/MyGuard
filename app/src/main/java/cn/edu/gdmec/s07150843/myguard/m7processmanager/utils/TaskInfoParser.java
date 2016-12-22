@@ -10,9 +10,9 @@ import android.os.Debug;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.edu.gdmec.s07150843.myguard.m7processmanager.entity.TaskInfo;
 import cn.edu.gdmec.s07150843.myguard.R;
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.entity.TaskInfo;
+
 /**
  * Created by hasee on 2016/12/21.
  */
@@ -25,7 +25,7 @@ public class TaskInfoParser {
         for (ActivityManager.RunningAppProcessInfo processInfo : processInfos) {
             String packname = processInfo.processName;
             TaskInfo taskInfo = new TaskInfo();
-            taskInfo.packageName = packname;
+            taskInfo.packname = packname;
             Debug.MemoryInfo[] memroyinfos = am.getProcessMemoryInfo(new int[]{processInfo.pid});
             long memsize = memroyinfos[0].getTotalPrivateDirty() * 1024;
             taskInfo.appMemory = memsize;
