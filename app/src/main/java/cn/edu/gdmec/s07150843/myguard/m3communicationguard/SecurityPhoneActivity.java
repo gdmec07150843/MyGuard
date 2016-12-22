@@ -128,7 +128,7 @@ implements View.OnClickListener {
                     pagenumber++;
                     if (pagenumber*pagesize>=totalNumber){
                         Toast.makeText(SecurityPhoneActivity.this,
-                                "没有更多的数据了",0).show();
+                                "没有更多的数据了",Toast.LENGTH_SHORT).show();
                     }else {
                         pageBlackNumber.addAll(dao.getPageBlackNumber(
                             pagenumber,pagesize
