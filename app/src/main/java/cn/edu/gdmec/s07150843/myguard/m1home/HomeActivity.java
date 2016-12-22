@@ -17,6 +17,8 @@ import android.widget.Toast;
 import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
+import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
+import cn.edu.gdmec.s07150843.myguard.m9advancedtools.AdvancedToolsActivity;
 
 public class HomeActivity extends AppCompatActivity {
     /**声明GridView，该控件类是于ListView*/
