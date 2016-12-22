@@ -46,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
 
         gv_home=(GridView)findViewById(R.id.gv_home);
         gv_home.setAdapter(new HomeAdapter(HomeActivity.this));
-      gv_home.setOnClickListener(new AdapterView.OnItemClickListener(){
+      gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
          @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
