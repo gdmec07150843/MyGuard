@@ -13,6 +13,7 @@ import cn.edu.gdmec.s07150843.myguard.m1home.untils.VersionUpdateUtils;
 /**
  * Created by 姚永楠 on 2016/12/19.
  */
+
 public class SplashActivity extends AppCompatActivity{
     private TextView mVersionTV;
     private String mVersion;
