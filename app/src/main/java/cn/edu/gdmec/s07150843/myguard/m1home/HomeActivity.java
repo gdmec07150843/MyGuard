@@ -30,6 +30,8 @@ import cn.edu.gdmec.s07150843.myguard.m9advancedtools.AdvancedToolsActivity;
 public class HomeActivity extends AppCompatActivity {
     /**声明GridView，该控件类是于ListView*/
     private GridView gv_home;
+
+
     /**存储手机防盗密码的sp*/
     private SharedPreferences msharedPreferences;
     /**设备管理员*/
