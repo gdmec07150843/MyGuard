@@ -1,77 +1,76 @@
-package cn.edu.gdmec.s07150843.myguard.m7processmanger.adapter;
+package cn.edu.gdmec.s07150843.myguard.m7processmanager;
 
-import android. app. ActivityManager;
-import android. content. Intent;
-import android. os. Bundle;
-import android. support. v7. app. AppCompatActivity;
-import android. text.format. Formatter;
-import android. view. View;
-import android. view. Window;
-import android. widget. AbsListView;
-import android. widget. AdapterView;
-import android. widget. ImageView;
-import android. widget. ListView;
-import android. widget. TextView;
-import android. widget. Toast;
-import java. util. ArrayList;
-import java. util. List;
-import cn.edu.gdmec.s07150843.myguard.R;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.ProcessManagerActivity;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.entity.TaskInfo;
-import cn.edu.gdmec.s07150843.myguard.m7processmanger.utils.SystemInfoUtils;
-
+        import android. app. ActivityManager;
+        import android. content. Intent;
+        import android. os. Bundle;
+        import android. support. v7. app. AppCompatActivity;
+        import android. text.format. Formatter;
+        import android. view. View;
+        import android. view. Window;
+        import android. widget. AbsListView;
+        import android. widget. AdapterView;
+        import android. widget. ImageView;
+        import android. widget. ListView;
+        import android. widget. TextView;
+        import android. widget. Toast;
+        import java. util. ArrayList;
+        import java. util. List;
+        import cn.edu.gdmec.s07150843.myguard.R;
+        import cn.edu.gdmec.s07150843.myguard.m7processmanager.adapter.ProcessManagerAdapter;
+        import cn.edu.gdmec.s07150843.myguard.m7processmanager.entity.TaskInfo;
+        import cn.edu.gdmec.s07150843.myguard.m7processmanager.utils.SystemInfoUtils;
 /**
  * Created by hasee on 2016/12/21.
  */
-public class ProcessManagerAdapter extends AppCompatActivity implements View. OnClickListener{
-    	private TextView mRunProcessNum;
-    	private	 TextView	mMemoryTV;
-    	private	 TextView	mProcessNumTV;
-    	private	 ListView	mListView;
-    	ProcessManagerAdapter adapter;
-    	private List<TaskInfo> runningTaskInfos;
-    	private List<TaskInfo> userTaskInfos = new	ArrayList<TaskInfo>();
-    	private	 List<TaskInfo> sysTaskInfo = new ArrayList<TaskInfo>();
-    	private	 ActivityManager manager;
-    	private int runningPocessCount;
-    	private	 long totalMem;
-    	protected void onCreate(Bundle savedInstanceState) {
-            super. onCreate(savedInstanceState);
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
-            setContentView(R.layout.activity_process_manager);
-            initView() ;
-            fillData() ;
+public class ProcessManagerActivity extends AppCompatActivity implements View. OnClickListener{
+    private TextView mRunProcessNum;
+    private	 TextView	mMemoryTV;
+    private	 TextView	mProcessNumTV;
+    private	 ListView	mListView;
+    ProcessManagerAdapter adapter;
+    private List<TaskInfo> runningTaskInfos;
+    private List<TaskInfo> userTaskInfos = new	ArrayList<TaskInfo>();
+    private	 List<TaskInfo> sysTaskInfo = new ArrayList<TaskInfo>();
+    private	 ActivityManager manager;
+    private int runningPocessCount;
+    private	 long totalMem;
+    protected void onCreate(Bundle savedInstanceState) {
+        super. onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_process_manager);
+        initView() ;
+        fillData() ;
+    }
+    protected void onResume(){
+        if (adapter != null) {
+            adapter. notifyDataSetChanged();
         }
-    	protected void onResume(){
-        	if (adapter != null) {
-            	adapter. notifyDataSetChanged();
-            	}
-        	super. onResume() ;
-        	}
-    	private void	initView() {
-        	findViewById(R. id. rl_titlebar). setBackgroundColor(
+        super. onResume() ;
+    }
+    private void	initView() {
+        findViewById(R. id. rl_titlebar). setBackgroundColor(
                 getResources(). getColor(R. color. bright_green));
-        	ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
-        	mLeftImgv. setOnClickListener(this);
-            mLeftImgv. setImageResource(R. drawable. back);
-            ImageView mRightImgv = (ImageView) findViewById(R. id. imgv_rightbtn);
-            mRightImgv. setImageResource(R. drawable. processmanager_setting_icon);
-            mRightImgv. setOnClickListener(this);
-            ((TextView) findViewById(R. id. tv_title)). setText("进程管理");
-            mRunProcessNum = (TextView) findViewById(R. id. tv_runningprocess_num);
-            mMemoryTV = (TextView) findViewById(R. id. tv_memory_processmanager);
-            mProcessNumTV = (TextView) findViewById(R. id. tv_user_runningprocess);
-            runningPocessCount = SystemInfoUtils
-                    .getRunningPocessCount(ProcessManagerActivity. this);
-            mRunProcessNum. setText ("运行中的进程:"+runningPocessCount+ "个");
-            long totalAvailMem = SystemInfoUtils. getAvailMem(this);
-            totalMem = SystemInfoUtils. getTotalMem();
-            mMemoryTV. setText("可用/总内存："
-                    + Formatter. formatFileSize(this, totalAvailMem) + "/"
-                    + Formatter. formatFileSize(this, totalMem));
-            mListView = (ListView) findViewById(R. id. lv_runningapps);
-            initListener();
-        }
+        ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
+        mLeftImgv. setOnClickListener(this);
+        mLeftImgv. setImageResource(R. drawable. back);
+        ImageView mRightImgv = (ImageView) findViewById(R. id. imgv_rightbtn);
+        mRightImgv. setImageResource(R. drawable. processmanager_setting_icon);
+        mRightImgv. setOnClickListener(this);
+        ((TextView) findViewById(R. id. tv_title)). setText("进程管理");
+        mRunProcessNum = (TextView) findViewById(R. id. tv_runningprocess_num);
+        mMemoryTV = (TextView) findViewById(R. id. tv_memory_processmanager);
+        mProcessNumTV = (TextView) findViewById(R. id. tv_user_runningprocess);
+        runningPocessCount = SystemInfoUtils
+                .getRunningPocessCount(ProcessManagerActivity. this);
+        mRunProcessNum. setText ("运行中的进程:"+runningPocessCount+ "个");
+        long totalAvailMem = SystemInfoUtils. getAvailMem(this);
+        totalMem = SystemInfoUtils. getTotalMem();
+        mMemoryTV. setText("可用/总内存："
+                + Formatter. formatFileSize(this, totalAvailMem) + "/"
+                + Formatter. formatFileSize(this, totalMem));
+        mListView = (ListView) findViewById(R. id. lv_runningapps);
+        initListener();
+    }
     private void initListener() {
         findViewById(R.id.btn_selectall).setOnClickListener(this);
         findViewById(R.id.btn_select_inverse).setOnClickListener(this);
@@ -202,7 +201,7 @@ public class ProcessManagerAdapter extends AppCompatActivity implements View. On
         Toast. makeText (this, "清理了" + count + "个进程，释放了"
                 + Formatter. formatFileSize (this, saveMemory) + "内存", 1). show();
         mProcessNumTV. setText ("用户进程："+userTaskInfos. size()+"个");
-                adapter. notifyDataSetChanged();
+        adapter. notifyDataSetChanged();
     }
 
 
@@ -235,4 +234,5 @@ public class ProcessManagerAdapter extends AppCompatActivity implements View. On
         adapter.notifyDataSetChanged();
     }
 
-    }
+}
+
