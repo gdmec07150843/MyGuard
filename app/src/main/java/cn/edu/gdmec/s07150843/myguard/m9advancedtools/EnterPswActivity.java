@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.SMSReducitionActivity;
 
@@ -36,7 +37,7 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_enter_psw);
         sp = getSharedPreferences("config", MODE_PRIVATE);
-        password = sp.getString("PhoneAntiTheftPWD",nu11);
+        password = sp.getString("PhoneAntiTheftPWD",null);
         Intent intent = getIntent();
         packagename = intent.getStringExtra("packagename");
         PackageManager pm = getPackageManager();
