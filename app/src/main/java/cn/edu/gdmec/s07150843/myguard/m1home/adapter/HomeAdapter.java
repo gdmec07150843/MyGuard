@@ -1,13 +1,12 @@
 package cn.edu.gdmec.s07150843.myguard.m1home.adapter;
 
 import android.content.Context;
-import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.R;
 /**
  * Created by 姚永楠 on 2016/12/19.
@@ -41,10 +40,12 @@ public class HomeAdapter extends BaseAdapter {
     }
 
 
+
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(context, R.layout.item_home, null);
-        TextView iv_icon = (TextView) view.findViewById(R.id.iv_icon);
+        ImageView iv_icon = (ImageView) view.findViewById(R.id.iv_icon);
         TextView tv_name = (TextView) view.findViewById(R.id.tv_name);
         iv_icon.setImageResource(imageId[position]);
         tv_name.setText(names[position]);

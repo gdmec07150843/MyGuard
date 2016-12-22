@@ -1,8 +1,9 @@
 package cn.edu.gdmec.s07150843.myguard.m2theftguard;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -11,13 +12,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
+import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.adapter.ContactAdapter;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.entity.ContactInfo;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.ContactInfoParser;
-import cn.edu.gdmec.s07150843.myguard.R;
 public class ContactSelectActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ListView mListView;
@@ -46,8 +45,8 @@ public class ContactSelectActivity extends AppCompatActivity implements View.OnC
 
     private void initView(){
         ((TextView)findViewById(R.id.tv_title)).setText("选择联系人");
-        ImageView imageView = (ImageView) findViewById(R.id.imgv_leftbtn);
-        mLeftImgv.setOnClikListener(this);
+        ImageView mLeftImgv = (ImageView) findViewById(R.id.imgv_leftbtn);
+        mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
         //设置导航栏
         findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.purple));

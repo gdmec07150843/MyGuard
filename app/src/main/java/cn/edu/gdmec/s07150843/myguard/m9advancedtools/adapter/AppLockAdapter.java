@@ -15,6 +15,7 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 import cn.edu.gdmec.s07150843.myguard.App;
+import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.entity.AppInfo;
 
 /**
