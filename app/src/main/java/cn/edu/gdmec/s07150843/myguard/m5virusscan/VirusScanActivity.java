@@ -1,21 +1,20 @@
 package cn.edu.gdmec.s07150843.myguard.m5virusscan;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 
 import cn.edu.gdmec.s07150843.myguard.R;
-
-import android. content. Intent ;
-import android. content. SharedPreferences;
-import android. util. Log;
-import android. view. View;
-import android. view. Window;
-import android. widget. ImageView;
-import android. widget. TextView;
-
-import java. io. File;
-import java. io. FileOutputStream;
-import java. io. InputStream;
 
 
 public class VirusScanActivity extends AppCompatActivity implements View. OnClickListener {
@@ -78,7 +77,7 @@ public class VirusScanActivity extends AppCompatActivity implements View. OnClic
 //    public static int rl_allscanvirus;
 
     private void initView() {
-        findViewById (R. id.rl_titlebar). setBackgroundColor (
+        findViewById (R. id.r1_titlebar). setBackgroundColor (
                 getResources(). getColor (R. color.light_blue)) ;
         ImageView mLeftImgv = (ImageView) findViewById (R. id.imgv_leftbtn) ;
         ( (TextView) findViewById (R. id.tv_title)). setText ("病毒查杀") ;
