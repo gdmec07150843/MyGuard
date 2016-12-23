@@ -40,6 +40,7 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_smsbackup);
         smsBackUpUtils=new SmsBackUpUtils();
         initView();
+
     }
 
     private void initView() {
