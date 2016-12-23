@@ -1,4 +1,4 @@
-package cn.edu.gdmec.s07150843.myguard.m9advancedtools.fragment;
+﻿package cn.edu.gdmec.s07150843.myguard.m9advancedtools.fragment;
 
 import android.database.ContentObserver;
 import android.net.Uri;
@@ -43,7 +43,7 @@ public class AppUnLockFragment extends Fragment{
            switch (msg.what){
                case 100:
                    unlockApps.clear();
-                   unlockApps.addAll(((List<App>)msg.obj));
+                   unlockApps.addAll(((List<AppInfo>)msg.obj));
                    if(adapter==null){
                       adapter=new AppLockAdapter(unlockApps,getActivity());
                      mUnLockLV.setAdapter(adapter);
@@ -61,7 +61,7 @@ public class AppUnLockFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_appunlock,null);
         mUnLockTV=(TextView) view.findViewById(R.id.tv_unlock);
-        mUnLockLV=(ListView) view.findViewById(R.id.tv_unlock);
+        mUnLockLV=(ListView) view.findViewById(R.id.lv_unlock);
          return  view;
     }
 

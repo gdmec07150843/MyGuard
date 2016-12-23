@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,7 +18,7 @@ import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
-import cn.edu.gdmec.s07150843.myguard.m9advancedtools.SMSReducitionActivity;
+
 
 public class EnterPswActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -91,7 +92,7 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void startAnim() {
-        Animation animation=Animation.loadAnimation(this,R.anim.shake);
+        Animation animation= AnimationUtils.loadAnimation(this,R.anim.shake);
         mEnterPswLL.startAnimation(animation);
     }
 }

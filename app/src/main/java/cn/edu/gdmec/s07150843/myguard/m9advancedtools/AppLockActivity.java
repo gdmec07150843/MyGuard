@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.gdmec.s07150843.myguard.R;
-import cn.edu.gdmec.s07150843.myguard.m9advancedtools.adapter.AppLockAdapter;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.fragment.AppLockFragment;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.fragment.AppUnLockFragment;
 
@@ -79,7 +78,7 @@ public class AppLockActivity  extends FragmentActivity implements View.OnClickLi
         mLockTV.setOnClickListener(this);
         mUnLockTV.setOnClickListener(this);
         slideLockView=findViewById(R.id.view_slide_lock);
-        slideUnLockView=findViewById(R.view_slide_unlock);
+        slideUnLockView=findViewById(R.id.view_slide_unlock);
         AppUnLockFragment unLock=new AppUnLockFragment();
         AppLockFragment lock=new AppLockFragment();
         mFragments.add(unLock);

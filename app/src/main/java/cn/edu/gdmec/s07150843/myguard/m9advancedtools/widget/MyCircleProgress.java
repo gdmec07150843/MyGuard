@@ -47,11 +47,11 @@ public class MyCircleProgress extends Button {
     private void init(Context context, AttributeSet attrs) {
         paint=new Paint();
         this.context=context;
-        TypedArray typedArray=context.obtainStyledAttributes(attrs,appcompat.R.styleable.MyCircleProgress);
+        TypedArray typedArray=context.obtainStyledAttributes(attrs,R.styleable.MyCircleProgress);
         progress=typedArray.getInteger(R.styleable.MyCircleProgress_progress,0);
         max=typedArray.getInteger(R.styleable.MyCircleProgress_max,100);
         mCircleColor=typedArray.getColor(R.styleable.MyCircleProgress_circleColor, Color.RED);
-        mProgressColor=typedArray.getColor(R.styleable.MyCirleProgress_progressColor,Color.WHITE);
+        mProgressColor=typedArray.getColor(R.styleable.MyCircleProgress_progressColor,Color.WHITE);
         roundWidth= DensityUtil.dip2px(context,5);
         mDistanceOFbg=DensityUtil.dip2px(context,5);
         mProgressTextSize=DensityUtil.dip2px(context,16);

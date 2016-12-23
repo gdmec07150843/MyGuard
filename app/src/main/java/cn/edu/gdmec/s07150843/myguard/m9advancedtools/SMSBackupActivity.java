@@ -8,8 +8,11 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 import cn.edu.gdmec.s07150843.myguard.R;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.utils.SmsBackUpUtils;
+import cn.edu.gdmec.s07150843.myguard.m9advancedtools.utils.UIUtils;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.MyCircleProgress;
 
 public class SMSBackupActivity extends AppCompatActivity implements View.OnClickListener{
@@ -47,7 +50,7 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
         mLeftImgv.setImageResource(R.drawable.back);
 
         mProgressButton=(MyCircleProgress) findViewById(R.id.mcp_smsbackup);
-        mProgressButton.setOnclickListener(this);
+        mProgressButton.setOnClickListener(this);
 
     }
 
@@ -74,13 +77,41 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
 
                 }
                 smsBackUpUtils.setFlag(flag);
-                new Thread() {
-                    public void run() {
-                        boolean backUpSms = smsBackUpUtils.backUpSms(SMSBackupActivity.this, new SmsBackUpUtils.BackupStatusCallback() {
+                 new Thread(){
+                       public void run(){
+                           try {
+                               boolean backUpSms = smsBackUpUtils.backUpSms(SMSBackupActivity.this, new SmsBackUpUtils.BackupStatusCallback() {
+                                   @Override
+                                   public void beforeSmsBackup(int process) {
+                                       try {
+                                           mProgressButton.setProcess(process);
+                                       } catch (IllegalAccessException e) {
+                                           e.printStackTrace();
+                                       }
+                                   }
 
-                        });
-                    }
-                };
+                                   @Override
+                                   public void onSmsBackup(int size) {
+                                       if(size<=0){
+                                           flag=false;
+                                           smsBackUpUtils.setFlag(flag);
+                                           UIUtils.showToast(SMSBackupActivity.this,"你还没有短信");
+                                           handler.sendEmptyMessage(CHANGE_BUTTON_TEXT);
+
+                                       }else{
+                                           try {
+                                               mProgressButton.setMax(size);
+                                           } catch (IllegalAccessException e) {
+                                               e.printStackTrace();
+                                           }
+                                       }
+                                   }
+                               });
+                           } catch (IOException e) {
+                               e.printStackTrace();
+                           }
+                       }
+                 }.start();
         }
     }
 }

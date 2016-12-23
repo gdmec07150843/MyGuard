@@ -27,12 +27,16 @@ public class AdvancedToolsView extends RelativeLayout{
     }
   public AdvancedToolsView(Context context, AttributeSet attrs,int defStyle){
       super(context,attrs);
-      TypedArray mTypeArray=context.obtainStyledAttributes(attr, R.styleable.AdvancedToolsView_an);
+      TypedArray mTypeArray=context.obtainStyledAttributes(attrs, R.styleable.AdvancedToolsView);
+      desc=mTypeArray.getString(R.styleable.AdvancedToolsView_desc);
+      drawable=mTypeArray.getDrawable(R.styleable.AdvancedToolsView_android_src);
+      mTypeArray.recycle();
+      init(context);
   }
     private void init(Context context) {
       View view = View.inflate(context,R.layout.ui_advancedtools_view,null);
         this.addView(view);
-        mDesriptionTV=findViewById(R.id.tv_decription);
+        mDesriptionTV= (TextView) findViewById(R.id.tv_decription);
         mLeftImgv=(ImageView)findViewById(R.id.imgv_left);
         mDesriptionTV.setText(desc);
         if(drawable!=null)mLeftImgv.setImageDrawable(drawable);

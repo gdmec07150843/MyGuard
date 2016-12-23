@@ -38,7 +38,7 @@ public class SMSReducitionActivity extends AppCompatActivity implements View.OnC
         mLeftImgv.setImageResource(R.drawable.back);
 
         mProgressButton=(MyCircleProgress) findViewById(R.id.mcp_reducition);
-        mProgressButton.setOnlickListener(this);
+        mProgressButton.setOnClickListener(this);
     }
 
 
@@ -72,12 +72,26 @@ public class SMSReducitionActivity extends AppCompatActivity implements View.OnC
                             smsReducitionUtils.reducitionSms(SMSReducitionActivity.this, new SmsReducitionUtils.SmsReducitionCallBack() {
                                 @Override
                                 public void onSmsReducition(int process) {
-                                    mProgressButton.setProcess(process);
+
+                                    try {
+                                        mProgressButton.setProcess(process);
+                                    } catch (IllegalAccessException e) {
+                                        e.printStackTrace();
+                                        UIUtils.showToast(SMSReducitionActivity.this,"文件格式错误");
+                                    }
+
                                 }
 
                                 @Override
                                 public void beforeSmsReducition(int size) {
-                                    mProgressButton.setMax(size);
+
+                                    try {
+                                        mProgressButton.setMax(size);
+                                    } catch (IllegalAccessException e) {
+                                        e.printStackTrace();
+                                        UIUtils.showToast(SMSReducitionActivity.this,"文件格式错误");
+                                    }
+
                                 }
                             });
                         }catch (XmlPullParserException e){
