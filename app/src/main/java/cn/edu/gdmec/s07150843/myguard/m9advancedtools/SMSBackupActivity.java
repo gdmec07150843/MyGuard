@@ -24,6 +24,7 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
     private Handler handler = new Handler() {
         public void handlerMessage(android.os.Message msg) {
             switch (msg.what) {
+
                 case CHANGE_BUTTON_TEXT:
                     mProgressButton.setText("一键备份");
                     break;
