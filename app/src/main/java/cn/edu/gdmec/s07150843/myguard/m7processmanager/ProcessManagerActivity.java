@@ -56,7 +56,7 @@ public class ProcessManagerActivity extends AppCompatActivity implements View. O
     }
 
     private void initView() {
-        findViewById(R.id.rl_titlebar).setBackgroundColor(
+        findViewById(R.id.r1_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.bright_green));
         ImageView mLeftImgv = (ImageView) findViewById(R.id.imgv_leftbtn);
         mLeftImgv.setOnClickListener(this);
@@ -67,7 +67,7 @@ public class ProcessManagerActivity extends AppCompatActivity implements View. O
         ((TextView) findViewById(R.id.tv_title)).setText("进程管理");
         mRunProcessNum = (TextView) findViewById(R.id.tv_runningprocess_num);
         mMemoryTV = (TextView) findViewById(R.id.tv_memory_processmanager);
-        mProcessNumTV - (TextView) findViewById(R.id.tv_user_runningprocess);
+        mProcessNumTV = (TextView) findViewById(R.id.tv_user_runningprocess);
         runningPocessCount = SystemInfoUtils
                 .getRunningPocessCount(ProcessManagerActivity.this);
         mRunProcessNum.setText("运行中的进程：" + runningPocessCount + "个");

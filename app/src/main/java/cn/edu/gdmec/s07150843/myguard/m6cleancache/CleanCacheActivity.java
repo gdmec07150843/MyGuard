@@ -1,23 +1,24 @@
 package cn.edu.gdmec.s07150843.myguard.m6cleancache;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import cn.edu.gdmec.s07150843.myguard.R;
+import android.text.format.Formatter;
+import android.view.View;
+import android.view.Window;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import android.content. Intent ;
-import android.content. pm. PackageManager;
-import android.graphics. drawable. AnimationDrawable;
-import android.os. Handler;
-import android.os. Message;
-import android.text. format. Formatter;
-import android.view. View;
-import android.view. Window;
-import android.widget. FrameLayout ;
-import android.widget. ImageView;
-import android.widget. TextView;
-import android.widget. Toast ;
-import java. lang. reflect. Method;
-import java. util. Random;
+import java.lang.reflect.Method;
+import java.util.Random;
+
+import cn.edu.gdmec.s07150843.myguard.R;
 
 
 public class CleanCacheActivity extends AppCompatActivity implements View. OnClickListener {
@@ -113,7 +114,7 @@ public class CleanCacheActivity extends AppCompatActivity implements View. OnCli
         }
 
         private void initView() {
-            findViewById(R.id.rl_titlebar).setBackgroundColor(
+            findViewById(R.id.r1_titlebar).setBackgroundColor(
                     getResources(). getColor (R. color.rose_red)) ;
             ( (TextView) findViewById (R. id. tv_title)). setText ("缓存处理") ;
             ImageView mLeftImgv = (ImageView) findViewById (R. id.imgv_leftbtn) ;

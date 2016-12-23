@@ -33,7 +33,7 @@ public class SettingsActivity extends AppCompatActivity implements View. OnClick
         }
 
     private void initView()	{
-        findViewById(R. id. rl_titlebar). setBackgroundColor(
+        findViewById(R. id. r1_titlebar). setBackgroundColor(
                 getResources().getColor(R. color. bright_blue));
         ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
         ((TextView) findViewById(R. id. tv_title)). setText("设置中心");

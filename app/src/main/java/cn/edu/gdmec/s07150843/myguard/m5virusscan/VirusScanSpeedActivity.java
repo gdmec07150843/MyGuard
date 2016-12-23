@@ -170,7 +170,7 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View. O
                         findViewById(R.id.r1_titlebar).setBackgroundColor(
                                 getResources().getColor(R.color.light_blue));
                         ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
-                        ((TextView) findViewById(R.id.tv_titie)).setText("病毒查杀进度");
+                        ((TextView) findViewById(R.id.tv_title)).setText("病毒查杀进度");
                         mLeftImgv.setOnClickListener(this);
                         mLeftImgv.setImageResource(R.drawable.back);
                         mProcessTV = (TextView) findViewById(R. id. tv_scanprocess);

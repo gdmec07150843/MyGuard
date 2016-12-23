@@ -39,7 +39,7 @@
         android:layout_height="50dp">
 
         <TextView
-            android:id="@+id/tv_lostfind_protectstauts"
+            android:id="@+id/tv_lostfind_protextstatuts"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             style="@style/textview16sp"

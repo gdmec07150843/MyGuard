@@ -104,7 +104,7 @@ implements View.OnClickListener {
         }
     }
     private void initView(){
-        findViewById(R.id.rl_titlebar).setBackgroundColor(
+        findViewById(R.id.r1_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.bright_purple)
         );
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
@@ -114,7 +114,7 @@ implements View.OnClickListener {
         mHaveBlackNumber=(FrameLayout)findViewById(R.id.fl_haveblacknumber);
         mNoBlackNumber=(FrameLayout)findViewById(R.id.fl_noblacknumber);
         findViewById(R.id.btn_addblacknumber).setOnClickListener(this);
-        mListView=(ListView)findViewById(R.id.iv_blacknumbers);
+        mListView=(ListView)findViewById(R.id.lv_blacknumbers);
         mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {

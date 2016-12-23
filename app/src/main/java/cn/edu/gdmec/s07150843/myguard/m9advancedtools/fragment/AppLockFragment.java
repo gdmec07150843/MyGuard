@@ -37,7 +37,7 @@ public class AppLockFragment extends Fragment {
     private Uri uri = Uri.parse("content://com.itcast.mobilesafe.applock");
     /*  private List<AppInfo> appInfos;*/
     private Handler mhandler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 100:
                     mLockApps.clear();
@@ -66,7 +66,8 @@ public class AppLockFragment extends Fragment {
 
     @Override
     public void onResume() {
-        dao=new AppInfoParser.getAppInfos(getActivity());
+        dao=new AppLockDao(getActivity());
+        appInfos=AppInfoParser.getAppInfos(getActivity());
         fillData();
         initListener();
         getActivity().getContentResolver().registerContentObserver(uri, true, new ContentObserver(new Handler()) {
@@ -95,14 +96,14 @@ public class AppLockFragment extends Fragment {
         }.start();
     }
     private void initListener(){
-        mLockLV.setOnClickListener(new AdapterView.OnItemClickListener() {
+        mLockLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
                 TranslateAnimation ta=new TranslateAnimation(Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,-1.0f,Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,0);
                        ta.setDuration(300);
                 view.startAnimation(ta);
                 new Thread(){
-                    public void run(){
+                    public void run() {
                         try {
                             Thread.sleep(300);
                         } catch (InterruptedException e) {
@@ -117,6 +118,7 @@ public class AppLockFragment extends Fragment {
                                 adapter.notifyDataSetChanged();
                             }
                         });
+
                     }
                 }.start();
             }

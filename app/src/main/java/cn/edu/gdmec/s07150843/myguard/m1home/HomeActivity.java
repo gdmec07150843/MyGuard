@@ -8,17 +8,27 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
+import cn.edu.gdmec.s07150843.myguard.m10settings.SettingsActivity;
 import cn.edu.gdmec.s07150843.myguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.LostFindActivity;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.SetUpPasswordDialog;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.receiver.MyDeviceAdminReciever;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
+import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
+import cn.edu.gdmec.s07150843.myguard.m4appmanager.AppManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m5virusscan.VirusScanActivity;
+import cn.edu.gdmec.s07150843.myguard.m6cleancache.CacheClearListActivity;
+import cn.edu.gdmec.s07150843.myguard.m7processmanager.ProcessManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m8trafficmonitor.TrafficMonitoringActivity;
+import cn.edu.gdmec.s07150843.myguard.m9advancedtools.AdvancedToolsActivity;
 
 public class HomeActivity extends AppCompatActivity {
     /**声明GridView，该控件类是于ListView*/
@@ -35,12 +45,12 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         msharedPreferences=getSharedPreferences("config",MODE_PRIVATE);
 
         gv_home=(GridView)findViewById(R.id.gv_home);
         gv_home.setAdapter(new HomeAdapter(HomeActivity.this));
-     /* gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+      gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
          @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -80,7 +90,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
 
-        });*/
+        });
         policyManager=(DevicePolicyManager)getSystemService(DEVICE_POLICY_SERVICE);
         componentName=new ComponentName(this,MyDeviceAdminReciever.class);
         boolean active=policyManager.isAdminActive(componentName);

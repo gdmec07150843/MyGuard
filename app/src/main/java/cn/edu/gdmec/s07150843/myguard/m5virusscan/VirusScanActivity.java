@@ -78,14 +78,14 @@ public class VirusScanActivity extends AppCompatActivity implements View. OnClic
 //    public static int rl_allscanvirus;
 
     private void initView() {
-        findViewById (R. id.rl_titlebar). setBackgroundColor (
+        findViewById (R. id.r1_titlebar). setBackgroundColor (
                 getResources(). getColor (R. color.light_blue)) ;
         ImageView mLeftImgv = (ImageView) findViewById (R. id.imgv_leftbtn) ;
         ( (TextView) findViewById (R. id.tv_title)). setText ("病毒查杀") ;
         mLeftImgv. setOnClickListener (this) ;
         mLeftImgv. setImageResource (R. drawable. back) ;
         mLastTimeTV = (TextView) findViewById (R. id. tv_lastscantime) ;
-        findViewById (R. id.rl_allscanvirus). setOnClickListener (this) ;
+        findViewById (R.id.rl_allscanvirus). setOnClickListener (this) ;
 
     }
 
