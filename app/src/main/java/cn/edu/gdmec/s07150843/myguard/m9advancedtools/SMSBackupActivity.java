@@ -23,6 +23,7 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
     private static final int CHANGE_BUTTON_TEXT = 100;
     private Handler handler = new Handler() {
         public void handlerMessage(android.os.Message msg) {
+
             switch (msg.what) {
 
                 case CHANGE_BUTTON_TEXT:
