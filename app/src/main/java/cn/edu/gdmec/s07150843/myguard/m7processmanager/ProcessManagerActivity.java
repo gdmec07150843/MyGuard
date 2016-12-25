@@ -67,7 +67,7 @@ public class ProcessManagerActivity extends AppCompatActivity implements View. O
         ((TextView) findViewById(R.id.tv_title)).setText("进程管理");
         mRunProcessNum = (TextView) findViewById(R.id.tv_runningprocess_num);
         mMemoryTV = (TextView) findViewById(R.id.tv_memory_processmanager);
-        mProcessNumTV =(TextView) findViewById(R.id.tv_user_runningprocess);
+        mProcessNumTV = (TextView) findViewById(R.id.tv_user_runningprocess);
         runningPocessCount = SystemInfoUtils
                 .getRunningPocessCount(ProcessManagerActivity.this);
         mRunProcessNum.setText("运行中的进程：" + runningPocessCount + "个");
@@ -210,7 +210,7 @@ public class ProcessManagerActivity extends AppCompatActivity implements View. O
                 + Formatter.formatFileSize(this, SystemInfoUtils.getAvailMem(this))
                 + Formatter.formatFileSize(this, totalMem));
         Toast.makeText(this, "清理了" + count + "个进程，释放了"
-                + Formatter.formatFileSize(this, saveMemory) + "内存", Toast.LENGTH_SHORT).show();
+                + Formatter.formatFileSize(this, saveMemory) + "内存", 1).show();
         mProcessNumTV.setText("用户进程：" + userTaskInfos.size() + "个");
         adapter.notifyDataSetChanged();
     }

@@ -75,7 +75,7 @@ public class AppManagerActivity extends AppCompatActivity implements View.OnClic
         mPhoneMemoryTV=(TextView)findViewById(R.id.tv_phonememory_appmanager);
         mSDMemoryTV=(TextView)findViewById(R.id.tv_sdmemory_appmanager);
         mAppNumTV=(TextView)findViewById(R.id.tv_appnumber);
-        mListView=(ListView)findViewById(R.id.appmanager);
+        mListView=(ListView)findViewById(R.id.lv_appmanager);
         getMemoryFromPhone();
         initData();
         initListener();
