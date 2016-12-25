@@ -18,6 +18,7 @@ import cn.edu.gdmec.s07150843.myguard.m10settings.utils.SystemInfoUtils;
  */
 public class SettingsActivity extends AppCompatActivity implements View. OnClickListener, SettingView.OnCheckedStatusIsChanged {
 
+
     private SettingView mBlackNumSV;
     private SettingView mAppLockSV;
     private SharedPreferences mSP;
