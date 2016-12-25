@@ -61,7 +61,7 @@ public class TrafficMonitoringActivity extends AppCompatActivity implements View
     }
 
     private void initView() {
-        findViewById(R.id.rl_titlebar).setBackgroundColor(
+        findViewById(R.id.r1_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.light_green));
         ImageView mLeftImgv = (ImageView) findViewById(R.id.imgv_leftbtn);
         ((TextView) findViewById(R.id.tv_title)).setText("流量监控");
@@ -119,7 +119,7 @@ public class TrafficMonitoringActivity extends AppCompatActivity implements View
                 SmsManager smsManager = SmsManager.getDefault();
                 switch (i) {
                     case 0:
-                        Toast.makeText(this, "您还没有设置运营商信息", 0).show();
+                        Toast.makeText(this, "您还没有设置运营商信息", Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
                         break;

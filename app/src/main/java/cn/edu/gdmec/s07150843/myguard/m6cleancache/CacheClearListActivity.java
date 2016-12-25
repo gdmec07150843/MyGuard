@@ -95,7 +95,7 @@ public class CacheClearListActivity extends AppCompatActivity implements View. O
 //    初始化控件
 
         private void initView() {
-            findViewById(R.id.rl_titlebar).setBackgroundColor(
+            findViewById(R.id.r1_titlebar).setBackgroundColor(
                     getResources(). getColor (R. color. rose_red)) ;
             ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
             mLeftImgv.setOnClickListener(this);

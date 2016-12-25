@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.gdmec.s07150843.myguard.R;
-import cn.edu.gdmec.s07150843.myguard.m9advancedtools.adapter.AppLockAdapter;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.fragment.AppLockFragment;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.fragment.AppUnLockFragment;
 
@@ -68,7 +67,7 @@ public class AppLockActivity  extends FragmentActivity implements View.OnClickLi
         });
     }
     private void initView(){
-        findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
+        findViewById(R.id.r1_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
         ((TextView)findViewById(R.id.tv_title)).setText("程序锁 ");
         mLeftImgv.setOnClickListener(this);

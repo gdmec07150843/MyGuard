@@ -21,7 +21,6 @@ public class LostFindActivity extends Activity implements View.OnClickListener {
     private ToggleButton mToggleButton;
     private TextView mProtectStatusTV;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -43,8 +42,9 @@ public class LostFindActivity extends Activity implements View.OnClickListener {
         TextView mTitleTV = (TextView)findViewById(R.id.tv_title);
         mTitleTV.setText("手机防盗");
         ImageView mLeftImgv = (ImageView)findViewById(R.id.imgv_leftbtn);
+        mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
-        findViewById(R.id.rl_titlebar).setBackgroundColor(
+        findViewById(R.id.r1_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.purple)
         );
         mSafePhoneTV = (TextView)findViewById(R.id.tv_safephone);

@@ -37,7 +37,7 @@ implements View.OnClickListener{
     }
 
     private void initView() {
-        findViewById(R.id.rl_titlebar).setBackgroundColor(
+        findViewById(R.id.r1_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.bright_purple)
         );
         ((TextView)findViewById(R.id.tv_title)).setText("添加黑名单");

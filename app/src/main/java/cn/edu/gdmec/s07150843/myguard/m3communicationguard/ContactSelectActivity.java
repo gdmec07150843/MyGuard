@@ -51,7 +51,7 @@ implements View.OnClickListener{
 
     private void initView() {
         ((TextView)findViewById(R.id.tv_title)).setText("选择联系人");
-        findViewById(R.id.rl_titlebar).setBackgroundColor(
+        findViewById(R.id.r1_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.bright_purple)
         );
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
