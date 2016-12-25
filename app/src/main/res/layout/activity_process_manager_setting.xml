@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<include layout="@layout/titlebar"/>
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -15,6 +17,13 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
             android:background="@drawable/processmanager_showsysapps"/>
+
+        <TextView
+            style="@style/wrapcontent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imageView1"
+           android:text="显示系统进程"/>
 
         <ToggleButton
             android:id="@+id/tgb_showsys_process"
@@ -61,6 +70,7 @@
             android:textOff=""
             android:textOn=""/>
     </RelativeLayout>
+
 
     <View
         android:layout_width="match_parent"

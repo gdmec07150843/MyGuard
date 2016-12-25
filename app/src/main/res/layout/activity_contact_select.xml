@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="cn.edu.gdmec.s07150843.myguard.m2theftguard.ContactSelectActivity">
-
+    <include layout="@layout/titlebar"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

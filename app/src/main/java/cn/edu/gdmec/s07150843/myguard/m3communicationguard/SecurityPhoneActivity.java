@@ -47,7 +47,7 @@ implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_security_phone);
         initView();
-        fillDate();
+        fillData();
     }
 
     @Override
@@ -72,7 +72,7 @@ implements View.OnClickListener {
         }
     }
 
-    private void fillDate() {
+    private void fillData() {
         dao = new BlackNumberDao(SecurityPhoneActivity.this);
         totalNumber = dao.getTotalNumber();
         if (totalNumber == 0) {
@@ -94,7 +94,7 @@ implements View.OnClickListener {
                 adapter.setCallBack(new BlackConactCallBack() {
                     @Override
                     public void DataSizeChanged() {
-                        fillDate();
+                        fillData();
                     }
                 });
                 mListView.setAdapter(adapter);

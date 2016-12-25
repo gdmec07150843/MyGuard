@@ -47,14 +47,14 @@ public class SmsLostFindReciver extends BroadcastReceiver {
                             abortBroadcast();
                         }else if ("#*alarm*#".equals(body)){
                             Log.i(TAG, "播放报警音乐");
-                        MediaPlayer player = MediaPlayer.create(context, R.raw.ylzs);
-                        player.setVolume(1.0f, 1.0f);
-                        player.start();
-                        abortBroadcast();
+                            MediaPlayer player = MediaPlayer.create(context, R.raw.ylzs);
+                            player.setVolume(1.0f, 1.0f);
+                            player.start();
+                            abortBroadcast();
                         }else if ("#*wipedata*#".equals(body)){
-                        Log.i(TAG, "远程清除数据.");
-                        dpm.wipeData(DevicePolicyManager.WIPE_EXTERNAL_STORAGE);
-                        abortBroadcast();
+                            Log.i(TAG, "远程清除数据.");
+                            dpm.wipeData(DevicePolicyManager.WIPE_EXTERNAL_STORAGE);
+                            abortBroadcast();
                     }else if ("#*lockScreen*#".equals(body)){
                         Log.i(TAG, "远程锁屏");
                         dpm.resetPassword("123", 0);

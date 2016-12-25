@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_interpwd_title" type="id" />
+    <item name="btn_comfirm" type="id" />
+    <item name="et_inter_password" type="id" />
+    <item name="btn_dismiss" type="id" />
+    <item name="tv_lostfind_protextstatuts" type="id" />
+    <item name="tv_launch_app" type="id" />
+    <item name="appmanager" type="id" />
+    <item name="tv_scanprocess" type="id" />
+    <item name="tv_scansapp" type="id" />
+    <item name="btn_canclescan" type="id" />
+    <item name="lv_scanapps" type="id" />
+    <item name="imgv_scanningicon" type="id" />
+</resources>

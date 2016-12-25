@@ -16,7 +16,7 @@ import cn.edu.gdmec.s07150843.myguard.m10settings.utils.SystemInfoUtils;
 /**
  * Created by hasee on 2016/12/22.
  */
-public class SettingsActivity extends AppCompatActivity implements View. OnClickListener, SettingView. OnCheckedStatusIsChanged {
+public class SettingsActivity extends AppCompatActivity implements View. OnClickListener, SettingView.OnCheckedStatusIsChanged {
 
     private SettingView mBlackNumSV;
     private SettingView mAppLockSV;
@@ -26,17 +26,17 @@ public class SettingsActivity extends AppCompatActivity implements View. OnClick
 
     protected	void	onCreate(Bundle savedlnstanceState) {
         super.onCreate(savedlnstanceState);
-        requestWindowFeature(Window. FEATURE_NO_TITLE);
-        setContentView(R. layout.activity_settings);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_settings);
         mSP = getSharedPreferences("config", MODE_PRIVATE);
         initView();
         }
 
     private void initView()	{
-        findViewById(R. id. r1_titlebar). setBackgroundColor(
+        findViewById(R. id. r1_titlebar).setBackgroundColor(
                 getResources().getColor(R. color. bright_blue));
         ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
-        ((TextView) findViewById(R. id. tv_title)). setText("设置中心");
+        ((TextView) findViewById(R.id.tv_title)).setText("设置中心");
         mLeftImgv. setOnClickListener(this);
         mLeftImgv. setImageResource(R. drawable. back);
         mBlackNumSV = (SettingView) findViewById(R. id. sv_blacknumber_set);
@@ -45,13 +45,15 @@ public class SettingsActivity extends AppCompatActivity implements View. OnClick
         mAppLockSV. setOnCheckedStatusIsChanged(this);
         }
 
-    protected	void onStart() {
-        running = SystemInfoUtils. isServiceRunning(this, "cn. itcast. mobliesafe. chapter09. service. AppLockService");
+    @Override
+    protected void onStart() {
+        running = SystemInfoUtils. isServiceRunning(this, "cn.itcast.mobliesafe.chapter09.service.AppLockService");
         mAppLockSV. setChecked(running);
         mBlackNumSV. setChecked(mSP. getBoolean("BlackNumStatus", true));
         super. onStart ();
         }
 
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imgv_leftbtn:
@@ -59,6 +61,8 @@ public class SettingsActivity extends AppCompatActivity implements View. OnClick
                 break;
         }
     }
+
+    @Override
     public void onCheckedChanged(View view, boolean isChecked) {
         switch (view. getId()) {
             case R. id. sv_blacknumber_set:

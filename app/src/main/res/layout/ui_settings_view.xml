@@ -16,8 +16,8 @@
         style="@style/textview14sp"
         android:layout_below="@+id/tv_setting_title"
         android:padding="3dp"
-        android:textColor="@color/dark_gray"
-        android:text="黑名单拦截已开启"/>
+        android:text="黑名单拦截已开启"
+        android:textColor="@color/dark_gray"/>
 
     <ToggleButton
         android:layout_width="70dp"
@@ -35,5 +35,4 @@
         android:layout_height="1.5px"
         android:background="@color/black30"
         android:layout_alignParentBottom="true"/>
-
 </RelativeLayout>

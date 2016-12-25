@@ -27,6 +27,11 @@ public class SetUp2Activity extends BaseSetUpActivity implements View.OnClickLis
         ((RadioButton)findViewById(R.id.rb_second)).setChecked(true);
         mBindSIMBtn = (Button)findViewById(R.id.btn_bind_sim);
         mBindSIMBtn.setOnClickListener(this);
+        if (isBind()){
+            mBindSIMBtn.setEnabled(false);
+        }else{
+            mBindSIMBtn.setEnabled(true);
+        }
     }
 
     private boolean isBind(){
@@ -40,7 +45,7 @@ public class SetUp2Activity extends BaseSetUpActivity implements View.OnClickLis
     @Override
     public void showNext(){
         if (!isBind()){
-            Toast.makeText(this, "您还么有绑定SIM卡", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "您还没有绑定SIM卡", Toast.LENGTH_SHORT).show();
             return;
         }
         startActivityAndFinishSelf(SetUp3Activity.class);

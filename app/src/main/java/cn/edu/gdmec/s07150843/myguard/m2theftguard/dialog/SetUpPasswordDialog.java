@@ -30,8 +30,8 @@ public class SetUpPasswordDialog extends Dialog implements View.OnClickListener 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.setup_password_dialog);
+        super.onCreate(savedInstanceState);
         initView();
     }
 
