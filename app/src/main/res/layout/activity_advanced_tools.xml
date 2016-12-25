@@ -7,7 +7,6 @@
     >
 <include layout="@layout/titlebar"/>
 
-<include layout="@layout/titlebar"/>
 
  <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView
         android:id="@+id/advanceview_numbelongs"
@@ -39,16 +38,6 @@
         android:src="@drawable/sms_reduction">
         </cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView>
 
-     <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView
-         android:layout_width="match_parent"
-         android:layout_height="55dp"
-         android:id="@+id/advanceview_smsbackup"
-         custom_android:desc="短信备份"
-         android:layout_marginTop="3dp"
-         android:src="@drawable/sms_backup">
-
-     </cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView>
-
     <cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView
         android:id="@+id/advanceview_applock"
         android:layout_width="match_parent"
@@ -57,9 +46,6 @@
         android:layout_marginTop="3dp"
         android:gravity="center_vertical"
         android:src="@drawable/programoflock">
-
-
-
     </cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.AdvancedToolsView>
 
 
