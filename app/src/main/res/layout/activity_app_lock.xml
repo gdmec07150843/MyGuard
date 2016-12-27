@@ -27,6 +27,7 @@
             android:id="@+id/tv_lock"
             style="@style/zero_widthwrapcontent"
             android:gravity="center"
+            android:textColor="@color/bright_red"
             android:text="已加锁"
             android:padding="5dp"
             />
@@ -45,16 +46,12 @@
             android:background="@drawable/slide_view"
             />
         <View
-           android:id="@+id/view_slide_lock"
+           android:id="@+id/view.slide_lock"
             android:layout_height="3dp"
             android:layout_gravity="bottom"
             style="@style/zero_widthwrapcontent"
             />
 
     </LinearLayout>
-      <android.support.v4.view.ViewPager
-          android:id="@+id/vp_applock"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          />
+
 </LinearLayout>

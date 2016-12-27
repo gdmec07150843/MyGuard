@@ -21,7 +21,11 @@ public class AdvancedToolsActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initView() {
+<<<<<<< HEAD
          findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
+=======
+         findViewById(R.id.r1_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
+>>>>>>> origin/master
          ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
         ((TextView)findViewById(R.id.tv_title)).setText("高级工具");
         mLeftImgv.setOnClickListener(this);

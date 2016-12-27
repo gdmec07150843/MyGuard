@@ -37,7 +37,7 @@ public class SettingView extends RelativeLayout {
         super (context, attrs);
         TypedArray mTypedArray	=context.obtainStyledAttributes(attrs,
                 R. styleable. SettingView);
-        setTitle = mTypedArray. getString(R. styleable.SettingView_settile);
+        setTitle = mTypedArray. getString(R. styleable. SettingView_settitle);
         status_on = mTypedArray. getString(R. styleable. SettingView_status_on);
         status_off = mTypedArray.getString(R.	styleable. SettingView_status_off);
         isChecked = mTypedArray. getBoolean(R. styleable. SettingView_status_ischecked, false);

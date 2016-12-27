@@ -81,7 +81,7 @@ public class TrafficMonitoringService extends Service {
             SharedPreferences. Editor edit = mSp. edit();
             edit. putLong("usedflow", usedFlow);
             edit. commit ();
-        };
+        }
     };
     public void onDestroy() {
         if (mThread != null & !mThread. interrupted()) {

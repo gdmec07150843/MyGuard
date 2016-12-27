@@ -15,7 +15,6 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
-import cn.edu.gdmec.s07150843.myguard.m10settings.SettingsActivity;
 import cn.edu.gdmec.s07150843.myguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.LostFindActivity;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.InterPasswordDialog;
@@ -26,10 +25,6 @@ import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity
 import cn.edu.gdmec.s07150843.myguard.m4appmanager.AppManagerActivity;
 import cn.edu.gdmec.s07150843.myguard.m5virusscan.VirusScanActivity;
 import cn.edu.gdmec.s07150843.myguard.m6cleancache.CacheClearListActivity;
-
-import cn.edu.gdmec.s07150843.myguard.m7processmanager.ProcessManagerActivity;
-import cn.edu.gdmec.s07150843.myguard.m8trafficmonitor.TrafficMonitoringActivity;
-import cn.edu.gdmec.s07150843.myguard.m9advancedtools.AdvancedToolsActivity;
 
 public class HomeActivity extends AppCompatActivity {
     /**声明GridView，该控件类是于ListView*/
@@ -75,18 +70,18 @@ public class HomeActivity extends AppCompatActivity {
                     case 4:
                         startActivity(CacheClearListActivity.class);
                         break;
-                   case 5:
+                  /*  case 5:
                         startActivity(ProcessManagerActivity.class);
                         break;
-                   case 6:
+                    case 6:
                         startActivity(TrafficMonitoringActivity.class);
                         break;
-                  case 7:
+                    case 7:
                         startActivity(AdvancedToolsActivity.class);
                         break;
-                  case 8:
+                    case 8:
                         startActivity(SettingsActivity.class);
-                        break;
+                        break;*/
                 }
             }
 

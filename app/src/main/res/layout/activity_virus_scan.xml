@@ -29,7 +29,7 @@
         android:layout_height="70dp"
         android:id="@+id/rl_allscanvirus">
         <ImageView
-           android:id="@+id/imgv_quickscan"
+            android:id="@+id/imgv_quickscan"
             style="@style/wrapcontent"
             android:src="@drawable/quickscan_icon"
             android:layout_alignParentLeft="true"

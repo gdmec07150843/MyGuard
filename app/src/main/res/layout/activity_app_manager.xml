@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp">
         <TextView
-           android:id="@+id/tv_phonememory_appmanager"
+            android:id="@+id/tv_phonememory_appmanager"
             style="@style/textview12sp"
             android:layout_alignParentLeft="true"/>
         <TextView

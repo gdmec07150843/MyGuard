@@ -17,6 +17,7 @@ import cn.edu.gdmec.s07150843.myguard.m5virusscan.entity.ScanAppInfo;
  * Created by 林振贤 on 2016/12/21.
  */
 public class ScanVirusAdapter extends BaseAdapter {
+    
     private List<ScanAppInfo> mScanAppInfos;
     private Context context;
 
