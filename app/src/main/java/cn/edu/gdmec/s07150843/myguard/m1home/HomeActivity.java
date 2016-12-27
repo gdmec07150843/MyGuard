@@ -15,6 +15,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
+import cn.edu.gdmec.s07150843.myguard.m10settings.SettingsActivity;
 import cn.edu.gdmec.s07150843.myguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.LostFindActivity;
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.dialog.InterPasswordDialog;
@@ -23,13 +24,17 @@ import cn.edu.gdmec.s07150843.myguard.m2theftguard.receiver.MyDeviceAdminRecieve
 import cn.edu.gdmec.s07150843.myguard.m2theftguard.utils.MD5Utils;
 import cn.edu.gdmec.s07150843.myguard.m3communicationguard.SecurityPhoneActivity;
 import cn.edu.gdmec.s07150843.myguard.m4appmanager.AppManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m5virusscan.VirusScanActivity;
+import cn.edu.gdmec.s07150843.myguard.m6cleancache.CacheClearListActivity;
 
 import cn.edu.gdmec.s07150843.myguard.m7processmanager.ProcessManagerActivity;
+import cn.edu.gdmec.s07150843.myguard.m8trafficmonitor.TrafficMonitoringActivity;
 import cn.edu.gdmec.s07150843.myguard.m9advancedtools.AdvancedToolsActivity;
 
 public class HomeActivity extends AppCompatActivity {
     /**声明GridView，该控件类是于ListView*/
     private GridView gv_home;
+
     /**存储手机防盗密码的sp*/
     private SharedPreferences msharedPreferences;
     /**设备管理员*/
@@ -41,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         msharedPreferences=getSharedPreferences("config",MODE_PRIVATE);
 
         gv_home=(GridView)findViewById(R.id.gv_home);
@@ -70,16 +75,16 @@ public class HomeActivity extends AppCompatActivity {
                     case 4:
                         startActivity(CacheClearListActivity.class);
                         break;
-                    case 5:
+                   case 5:
                         startActivity(ProcessManagerActivity.class);
                         break;
-                    case 6:
+                   case 6:
                         startActivity(TrafficMonitoringActivity.class);
                         break;
-                    case 7:
+                  case 7:
                         startActivity(AdvancedToolsActivity.class);
                         break;
-                    case 8:
+                  case 8:
                         startActivity(SettingsActivity.class);
                         break;
                 }
@@ -100,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
     private void showSetUpPswdDialog(){
         final SetUpPasswordDialog setUpPasswordDialog=new SetUpPasswordDialog(HomeActivity.this);
         setUpPasswordDialog.setCallBack(new SetUpPasswordDialog.MyCallBack(){
-
+            @Override
             public void ok(){
                 String firstPwsd=setUpPasswordDialog.mFirstPWDET.getText().toString().trim();
                 String affirmPwsd=setUpPasswordDialog.mAffirmET.getText().toString().trim();
@@ -118,6 +123,7 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(HomeActivity.this, "密码不能为空!", Toast.LENGTH_SHORT).show();
                 }
             }
+            @Override
             public void cancle(){
                 setUpPasswordDialog.dismiss();
             }
@@ -130,6 +136,7 @@ public class HomeActivity extends AppCompatActivity {
         final String password=getPassword();
         final InterPasswordDialog mInPswdDialog=new InterPasswordDialog(HomeActivity.this);
         mInPswdDialog.setCallBack(new InterPasswordDialog.MyCallBack(){
+            @Override
             public void confirm(){
                 if(TextUtils.isEmpty(mInPswdDialog.getPassword())){
                     Toast.makeText(HomeActivity.this,"密码不能为空!",Toast.LENGTH_SHORT).show();
@@ -141,6 +148,7 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(HomeActivity.this,"密码有误，请重新输入！",Toast.LENGTH_SHORT).show();
                 }
             }
+            @Override
             public void cancle(){
                 mInPswdDialog.dismiss();
             }

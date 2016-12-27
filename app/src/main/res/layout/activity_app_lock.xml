@@ -27,7 +27,6 @@
             android:id="@+id/tv_lock"
             style="@style/zero_widthwrapcontent"
             android:gravity="center"
-            android:textColor="@color/bright_red"
             android:text="已加锁"
             android:padding="5dp"
             />

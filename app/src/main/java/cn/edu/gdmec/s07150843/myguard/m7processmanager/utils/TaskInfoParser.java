@@ -25,7 +25,7 @@ public class TaskInfoParser {
         for (ActivityManager.RunningAppProcessInfo processInfo : processInfos) {
             String packname = processInfo.processName;
             TaskInfo taskInfo = new TaskInfo();
-            taskInfo.packageName = packname;
+            taskInfo.packname = packname;
             Debug.MemoryInfo[] memroyinfos = am.getProcessMemoryInfo(new int[]{processInfo.pid});
             long memsize = memroyinfos[0].getTotalPrivateDirty() * 1024;
             taskInfo.appMemory = memsize;

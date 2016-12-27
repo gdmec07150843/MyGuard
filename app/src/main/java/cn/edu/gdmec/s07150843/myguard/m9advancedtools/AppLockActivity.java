@@ -69,7 +69,9 @@ public class AppLockActivity  extends FragmentActivity implements View.OnClickLi
     private void initView(){
         findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
-        ((TextView)findViewById(R.id.tv_title)).setText("程序锁 ");
+        /*头部的样式*/
+        ((TextView)findViewById(R.id.tv_title)).setText("程序锁");
+        /*图片设置监听*/
         mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
         mAppViewPager=(ViewPager)findViewById(R.id.vp_applock);

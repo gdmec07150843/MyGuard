@@ -157,7 +157,7 @@ public class AppManagerActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.imv_leftben:
+            case R.id.imgv_leftbtn:
                 finish();
                 break;
         }

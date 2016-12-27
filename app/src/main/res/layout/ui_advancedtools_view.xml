@@ -14,6 +14,7 @@
         android:layout_width="13dp"
         android:layout_height="20dp"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:layout_marginRight="20dp"
         android:background="@drawable/right_arrows_red"
         android:id="@+id/imageView1"

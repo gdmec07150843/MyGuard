@@ -23,7 +23,7 @@ public class AppLockService extends Service {
     private List<String> packagenames;
     private Intent intent;
     private ActivityManager am;
-    private List<ActivityManager.RunningTaskInfo>taskInfos;
+    private List<ActivityManager.RunningTaskInfo> taskInfos;
     private ActivityManager.RunningTaskInfo taskInfo;
     private String packagename;
     private String tempStopProtectPackname;

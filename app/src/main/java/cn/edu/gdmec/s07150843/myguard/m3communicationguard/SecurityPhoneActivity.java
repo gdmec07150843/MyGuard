@@ -47,7 +47,7 @@ implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_security_phone);
         initView();
-        fillDate();
+        fillData();
     }
 
     @Override
@@ -72,7 +72,7 @@ implements View.OnClickListener {
         }
     }
 
-    private void fillDate() {
+    private void fillData() {
         dao = new BlackNumberDao(SecurityPhoneActivity.this);
         totalNumber = dao.getTotalNumber();
         if (totalNumber == 0) {
@@ -94,7 +94,7 @@ implements View.OnClickListener {
                 adapter.setCallBack(new BlackConactCallBack() {
                     @Override
                     public void DataSizeChanged() {
-                        fillDate();
+                        fillData();
                     }
                 });
                 mListView.setAdapter(adapter);
@@ -114,7 +114,7 @@ implements View.OnClickListener {
         mHaveBlackNumber=(FrameLayout)findViewById(R.id.fl_haveblacknumber);
         mNoBlackNumber=(FrameLayout)findViewById(R.id.fl_noblacknumber);
         findViewById(R.id.btn_addblacknumber).setOnClickListener(this);
-        mListView=(ListView)findViewById(R.id.iv_blacknumbers);
+        mListView=(ListView)findViewById(R.id.lv_blacknumbers);
         mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -128,7 +128,7 @@ implements View.OnClickListener {
                     pagenumber++;
                     if (pagenumber*pagesize>=totalNumber){
                         Toast.makeText(SecurityPhoneActivity.this,
-                                "没有更多的数据了",0).show();
+                                "没有更多的数据了",Toast.LENGTH_SHORT).show();
                     }else {
                         pageBlackNumber.addAll(dao.getPageBlackNumber(
                             pagenumber,pagesize

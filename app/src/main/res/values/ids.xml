@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="iv_icon" type="id" />
-    <item name="tv_name" type="id" />
-    <item name="gv_home" type="id" />
-    <item name="tv_splash_version" type="id" />
-    <item name="imv_leftben" type="id" />
-    <item name="tv_phonememory_appmanager" type="id" />
-    <item name="tv_sdmemory_appmanager" type="id" />
-    <item name="tv_appnumber" type="id" />
-    <item name="appmanager" type="id" />
-    <item name="rl_titlebar" type="id" />
-    <item name="imgv_appicon" type="id" />
-    <item name="tv_appisroom" type="id" />
-    <item name="tv_appsize" type="id" />
-    <item name="tv_appname" type="id" />
-    <item name="tv_launch_app" type="id" />
-    <item name="tv_setting_app" type="id" />
-    <item name="tv_share_app" type="id" />
-    <item name="tv_uninstall_app" type="id" />
-    <item name="ll_option_app" type="id" />
-    <item name="btn_cancle" type="id" />
+    <item name="tv_interpwd_title" type="id" />
+    <item name="btn_comfirm" type="id" />
+    <item name="et_inter_password" type="id" />
+    <item name="btn_dismiss" type="id" />
     <item name="tv_lostfind_protextstatuts" type="id" />
+    <item name="tv_launch_app" type="id" />
+    <item name="appmanager" type="id" />
+    <item name="tv_scanprocess" type="id" />
+    <item name="tv_scansapp" type="id" />
+    <item name="btn_canclescan" type="id" />
+    <item name="lv_scanapps" type="id" />
+    <item name="imgv_scanningicon" type="id" />
 </resources>

@@ -23,9 +23,7 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
     private static final int CHANGE_BUTTON_TEXT = 100;
     private Handler handler = new Handler() {
         public void handlerMessage(android.os.Message msg) {
-
             switch (msg.what) {
-
                 case CHANGE_BUTTON_TEXT:
                     mProgressButton.setText("一键备份");
                     break;
@@ -37,18 +35,18 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_smsbackup);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_smsbackup);
+
         setContentView(R.layout.activity_smsbackup);
         smsBackUpUtils=new SmsBackUpUtils();
         initView();
-
     }
 
     private void initView() {
-        findViewById(R.id.r1_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
+        findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
-        ((TextView)findViewById(R.id.tv_title)).setText("短息备份");
+        ((TextView)findViewById(R.id.tv_title)).setText("短信备份");
         mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
 
@@ -110,6 +108,12 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
                                        }
                                    }
                                });
+                               if(backUpSms){
+                                   UIUtils.showToast(SMSBackupActivity.this,"备份成功");
+
+                               }else{
+                                   UIUtils.showToast(SMSBackupActivity.this,"备份失败");
+                               }
                            } catch (IOException e) {
                                e.printStackTrace();
                            }

@@ -37,7 +37,7 @@ public class AppLockFragment extends Fragment {
     private Uri uri = Uri.parse("content://com.itcast.mobilesafe.applock");
     /*  private List<AppInfo> appInfos;*/
     private Handler mhandler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 100:
                     mLockApps.clear();
