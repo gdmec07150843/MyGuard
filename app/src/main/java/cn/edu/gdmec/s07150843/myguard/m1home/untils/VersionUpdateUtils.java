@@ -75,6 +75,7 @@ public class VersionUpdateUtils {
         mVersion=Version;
         context=activity;
     }
+
     public void getCloudVersion(){
         try {
              HttpClient client=new DefaultHttpClient();
