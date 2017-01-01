@@ -56,7 +56,7 @@ public class ProcessManagerActivity extends AppCompatActivity implements View. O
     }
 
     private void initView() {
-        findViewById(R.id.r1_titlebar).setBackgroundColor(
+        findViewById(R.id.rl_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.bright_green));
         ImageView mLeftImgv = (ImageView) findViewById(R.id.imgv_leftbtn);
         mLeftImgv.setOnClickListener(this);

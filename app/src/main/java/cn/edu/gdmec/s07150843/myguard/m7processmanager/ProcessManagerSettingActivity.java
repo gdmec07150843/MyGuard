@@ -33,11 +33,11 @@ public class ProcessManagerSettingActivity extends AppCompatActivity implements 
         }
 
     private void initView(){
-<<<<<<< HEAD
+
         findViewById(R. id. rl_titlebar). setBackgroundColor(
-=======
-        findViewById(R. id. r1_titlebar). setBackgroundColor(
->>>>>>> origin/master
+
+        findViewById(R. id. rl_titlebar). setBackgroundColor(
+
                 getResources(). getColor(R. color. bright_green));
         ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
         mLeftImgv. setOnClickListener(this);

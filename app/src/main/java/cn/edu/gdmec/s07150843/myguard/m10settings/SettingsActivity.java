@@ -33,14 +33,14 @@ public class SettingsActivity extends AppCompatActivity implements View. OnClick
         }
 
     private void initView()	{
-        findViewById(R. id. r1_titlebar).setBackgroundColor(
+        findViewById(R. id. rl_titlebar).setBackgroundColor(
                 getResources().getColor(R. color. bright_blue));
         ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
         ((TextView) findViewById(R.id.tv_title)).setText("设置中心");
         mLeftImgv. setOnClickListener(this);
         mLeftImgv. setImageResource(R. drawable. back);
-        mBlackNumSV = (SettingView) findViewById(R. id. sv_blacknumber_set);
-        mAppLockSV = (SettingView) findViewById(R. id. sv_applock_set);
+        mBlackNumSV = (SettingView) findViewById(R.id.sv_blacknumber_set);
+        mAppLockSV = (SettingView) findViewById(R.id.sv_applock_set);
         mBlackNumSV. setOnCheckedStatusIsChanged(this);
         mAppLockSV. setOnCheckedStatusIsChanged(this);
         }
@@ -81,7 +81,7 @@ public class SettingsActivity extends AppCompatActivity implements View. OnClick
     }
     private void saveStatus (String keyname, boolean isChecked) {
         if(!TextUtils. isEmpty(keyname)){
-            SharedPreferences. Editor edit = mSP. edit();
+            SharedPreferences. Editor edit = mSP.edit();
             edit. putBoolean(keyname, isChecked);
             edit. commit ();
         }
