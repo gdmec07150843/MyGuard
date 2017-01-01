@@ -67,7 +67,7 @@ public class AppManagerActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void initView() {
-        findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_yellow));
+        findViewById(R.id.r1_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_yellow));
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
         ((TextView)findViewById(R.id.tv_title)).setText("软件管家");
         mLeftImgv.setOnClickListener(this);
@@ -157,7 +157,7 @@ public class AppManagerActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.imv_leftben:
+            case R.id.imgv_leftbtn:
                 finish();
                 break;
         }

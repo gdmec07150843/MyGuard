@@ -21,12 +21,11 @@
             android:textColor="@color/bright_red"
             itcast:circleColor="@color/white"
 
-            itcast:progressColor="@color/light_pink">
+            itcast:progressColor="@color/light_pink"/>
 
-        </cn.edu.gdmec.s07150843.myguard.m9advancedtools.widget.MyCircleProgress>
 
-            itcast:progressColor="@color/light_pink"
-            ></LinearLayout>
+
+    </LinearLayout>
 
     </LinearLayout>
 

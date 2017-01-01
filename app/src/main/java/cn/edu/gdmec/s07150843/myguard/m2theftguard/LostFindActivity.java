@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import cn.edu.gdmec.s07150843.myguard.R;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.*;
 
 public class LostFindActivity extends Activity implements View.OnClickListener {
 

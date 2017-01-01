@@ -5,6 +5,8 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.BaseSetUpActivity;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.SetUp2Activity;
 
 public class SetUp1Activity extends BaseSetUpActivity {
 

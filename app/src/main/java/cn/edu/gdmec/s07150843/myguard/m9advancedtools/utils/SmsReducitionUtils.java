@@ -19,6 +19,7 @@ import cn.edu.gdmec.s07150843.myguard.m9advancedtools.entity.SmsInfo;
 /**
  * Created by chen on 2016/12/20.
  */
+
 public class SmsReducitionUtils {
     public interface SmsReducitionCallBack{
         public void beforeSmsReducition(int size);

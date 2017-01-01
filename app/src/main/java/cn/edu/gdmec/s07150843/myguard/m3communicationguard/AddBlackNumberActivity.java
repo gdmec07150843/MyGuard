@@ -47,7 +47,7 @@ implements View.OnClickListener{
 
         mSmsCB=(CheckBox)findViewById(R.id.cb_blacknumber_sms);
         mTelCB=(CheckBox)findViewById(R.id.cb_blacknumber_tel);
-        mNumET=(EditText)findViewById(R.id.et_balcknumber);
+        mNumET=(EditText)findViewById(R.id.et_blacknumber);
         mNameET=(EditText)findViewById(R.id.et_blackname);
         findViewById(R.id.add_blacknum_btn).setOnClickListener(this);
         findViewById(R.id.add_fromcontact_btn).setOnClickListener(this);
@@ -63,7 +63,7 @@ implements View.OnClickListener{
             String number=mNumET.getText().toString().trim();
             String name=mNameET.getText().toString().trim();
             if (TextUtils.isEmpty(number)||TextUtils.isEmpty(name)){
-                Toast.makeText(this,"电话号码和手机号不能为空！",0).show();
+                Toast.makeText(this,"电话号码和手机号不能为空！",Toast.LENGTH_SHORT).show();
                 return;
             }else {
                 //电话号码和名称都不为空
@@ -80,7 +80,7 @@ implements View.OnClickListener{
                     //电话拦截
                     blackContactInfo.mode=1;
                 }else {
-                    Toast.makeText(this,"请选择 拦截模式!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"请选择拦截模式!",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (!dao.IsNumberExist(blackContactInfo.phoneNumber)){

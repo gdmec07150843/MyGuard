@@ -72,7 +72,7 @@ public class BlackNumberDao {
         //得到可读的数据库
         SQLiteDatabase db=blackNumberOpenHelper.getReadableDatabase();
         Cursor cursor=db.rawQuery(
-                "select number,mode,name from blacknumber limint ? offset ?",
+                "select number,mode,name from blacknumber limit ? offset ?",
                 new String[]{String.valueOf(pagesize),
                 String.valueOf(pagesize*pagenumber)}
         );
@@ -119,7 +119,7 @@ public class BlackNumberDao {
         Log.d("incoming phonenumber", number);
         //得到可读的数据库
         SQLiteDatabase db = blackNumberOpenHelper.getReadableDatabase();
-        Cursor cursor = db.query("blackenumber",new String[]{"mode"},"number=?",
+        Cursor cursor = db.query("blacknumber",new String[]{"mode"},"number=?",
                 new String[]{number},null,null,null);
         int mode=0;
         if (cursor.moveToNext()){
@@ -138,6 +138,7 @@ public class BlackNumberDao {
         cursor.moveToNext();
         int count=cursor.getInt(0);
         cursor.close();
+        db.close();
         return count;
     }
 }

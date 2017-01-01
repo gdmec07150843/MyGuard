@@ -23,6 +23,7 @@ public class ContactInfoParser {
         List<ContactInfo>infos=new ArrayList<ContactInfo>();
         Cursor cursor=resolver.query(uri,new String[]{"contact_id"},
                 null,null,null);
+
         while (cursor.moveToNext()){
             String id=cursor.getString(0);
             if(id!=null){
@@ -32,14 +33,18 @@ public class ContactInfoParser {
                 //2.根据联系人的id,查询data表，把这个id的数据取出来
                 //系统api查询data表的时候 不是真正的查询data表，而是查询data表的视图
                 Cursor dataCursor=resolver.query(datauri,new String[]{
-                        "datal","mimetype"
-                },"raw_contact_id",new String[]{id},null);
+                        "data1","mimetype"
+                },"raw_contact_id=?",new String[]{id},null);
                 while (dataCursor.moveToNext()){
-                    String datal=dataCursor.getString(0);
-                    String minmetype=dataCursor.getString(1);
-                    if ("vnd.android.cursor.item/name".equals(minmetype)){
-                        System.out.println("姓名: "+datal);
-                        info.phone=datal;
+                    String data1=dataCursor.getString(0);
+                    String mimetype=dataCursor.getString(1);
+                    if ("vnd.android.cursor.item/name".equals(mimetype)){
+                        System.out.println("姓名="+data1);
+                        info.name=data1;
+                    }else if("vnd.android.cursor.item/phone_v2"
+                            .equals(mimetype)){
+                        System.out.println("电话="+data1);
+                        info.phone=data1;
                     }
                 }
                 //如果姓名和手机都为空，则跳过该条数据
@@ -53,7 +58,7 @@ public class ContactInfoParser {
         return infos;
     }
     public static List<ContactInfo>getSimContacts(Context context){
-        Uri uri=Uri.parse("content://iss//adn");
+        Uri uri=Uri.parse("content://icc/adn");
         List<ContactInfo> infos=new ArrayList<ContactInfo>();
         Cursor mCursor=context.getContentResolver().query(uri,null,null,null,null);
         if (mCursor!=null){

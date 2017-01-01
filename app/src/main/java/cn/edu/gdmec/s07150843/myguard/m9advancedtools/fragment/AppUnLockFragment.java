@@ -1,4 +1,4 @@
-﻿package cn.edu.gdmec.s07150843.myguard.m9advancedtools.fragment;
+package cn.edu.gdmec.s07150843.myguard.m9advancedtools.fragment;
 
 import android.database.ContentObserver;
 import android.net.Uri;
@@ -39,21 +39,21 @@ public class AppUnLockFragment extends Fragment{
     private Uri uri=Uri.parse("content://com.itcast.mobilesafe.applock");
     private List<AppInfo>appInfos;
     private Handler mhandler=new Handler() {
-       public void handleMessage(android.os.Message msg){
-           switch (msg.what){
-               case 100:
-                   unlockApps.clear();
-                   unlockApps.addAll(((List<AppInfo>)msg.obj));
-                   if(adapter==null){
-                      adapter=new AppLockAdapter(unlockApps,getActivity());
-                     mUnLockLV.setAdapter(adapter);
-                   }else{
-                       adapter.notifyDataSetChanged();
-                   }
-                   mUnLockTV.setText("未加锁应用"+unlockApps.size()+"个");
-                   break;
-           }
-       }
+        public void handleMessage(Message msg){
+            switch (msg.what){
+                case 100:
+                    unlockApps.clear();
+                    unlockApps.addAll(((List<AppInfo>)msg.obj));
+                    if(adapter==null){
+                        adapter=new AppLockAdapter(unlockApps,getActivity());
+                        mUnLockLV.setAdapter(adapter);
+                    }else{
+                        adapter.notifyDataSetChanged();
+                    }
+                    mUnLockTV.setText("未加锁应用"+unlockApps.size()+"个");
+                    break;
+            }
+        }
     };
 
 
@@ -61,8 +61,8 @@ public class AppUnLockFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_appunlock,null);
         mUnLockTV=(TextView) view.findViewById(R.id.tv_unlock);
-        mUnLockLV=(ListView) view.findViewById(R.id.lv_unlock);
-         return  view;
+        mUnLockLV=(ListView)view.findViewById(R.id.lv_unlock);
+        return  view;
     }
 
     @Override
@@ -87,7 +87,7 @@ public class AppUnLockFragment extends Fragment{
             public void run(){
                 for(AppInfo info :appInfos){
                     if (!dao.find(info.packageName)) {
-                         info.isLock=false;
+                        info.isLock=false;
                         aInfos.add(info);
                     }
                 }
@@ -102,9 +102,9 @@ public class AppUnLockFragment extends Fragment{
         mUnLockLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long id) {
-                  if(unlockApps.get(position).packageName.equals("cn.itcast.mobliesafe")){
-                      return;
-                  }
+                if(unlockApps.get(position).packageName.equals("cn.itcast.mobliesafe")){
+                    return;
+                }
                 TranslateAnimation ta=new TranslateAnimation(Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,1.0f,Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,0);
                 ta.setDuration(300);
                 view.startAnimation(ta);

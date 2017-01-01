@@ -92,7 +92,7 @@ public class BlackContactAdapter extends BaseAdapter{
                         callBack.DataSizeChanged();
                     }
                 }else {
-                    Toast.makeText(context,"删除失败！",0).show();
+                    Toast.makeText(context,"删除失败！",Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -38,7 +38,7 @@ implements View.OnClickListener{
                     }
                     break;
             }
-        };
+        }
     };
 
     @Override
@@ -65,7 +65,7 @@ implements View.OnClickListener{
                 systemContacts.addAll(ContactInfoParser.getSimContacts(
                         ContactSelectActivity.this));
                 mHandler.sendEmptyMessage(10);
-            };
+            }
         }.start();
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 

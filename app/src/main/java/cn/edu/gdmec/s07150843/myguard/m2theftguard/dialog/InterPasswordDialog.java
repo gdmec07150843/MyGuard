@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import cn.edu.gdmec.s07150843.myguard.R;
 /*确认密码对话框*/
-public class InterPasswordDialog extends Dialog implements android.view.View.OnClickListener {
+public class InterPasswordDialog extends Dialog implements View.OnClickListener {
     /*对话框标题*/
     private TextView mTitleTV;
     /*输入密码文本框*/

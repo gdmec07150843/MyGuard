@@ -21,6 +21,7 @@ import cn.edu.gdmec.s07150843.myguard.m9advancedtools.utils.DensityUtil;
 /**
  * Created by chen on 2016/12/21.
  */
+
 public class MyCircleProgress extends Button {
 
     private Paint paint;

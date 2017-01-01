@@ -10,6 +10,8 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import cn.edu.gdmec.s07150843.myguard.R;
+import cn.edu.gdmec.s07150843.myguard.m2theftguard.*;
+
 public class SetUp2Activity extends BaseSetUpActivity implements View.OnClickListener {
     private TelephonyManager mTelephonyManager;
     private Button mBindSIMBtn;

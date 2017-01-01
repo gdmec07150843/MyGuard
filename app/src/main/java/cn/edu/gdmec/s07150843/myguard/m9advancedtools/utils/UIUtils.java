@@ -6,6 +6,7 @@ import android.widget.Toast;
 /**
  * Created by chen on 2016/12/20.
  */
+
 public class UIUtils {
     public static void showToast(final Activity context,final String msg){
         if("main".equals(Thread.currentThread().getName())){
