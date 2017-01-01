@@ -52,7 +52,7 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View. O
     private SharedPreferences mSP;
 
     private Handler mHandler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SCAN_BENGIN:
                     mScanAppTV.setText("初始化查毒引擎中。。。");

@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 /**
  * Created by chen on 2016/12/20.
  */
+
 public class AppInfo {
     public String packageName;
     public Drawable icon;

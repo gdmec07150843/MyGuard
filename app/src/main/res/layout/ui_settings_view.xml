@@ -3,14 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="55dp"
     android:orientation="vertical">
-
     <TextView
         android:id="@+id/tv_setting_title"
         style="@style/textview16sp"
         android:padding="3dp"
         android:textColor="@color/bright_blue"
-        android:text="黑名单设置"/>
-
+        android:text="黑名单"/>
     <TextView
         android:id="@+id/tv_setting_status"
         style="@style/textview14sp"
@@ -18,7 +16,6 @@
         android:padding="3dp"
         android:text="黑名单拦截已开启"
         android:textColor="@color/dark_gray"/>
-
     <ToggleButton
         android:layout_width="70dp"
         android:layout_height="30dp"
@@ -26,10 +23,9 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="27dp"
-        android:background="@drawable/toggle_btn_blue_selector"
+        android:background="@drawable/toggle_btn_bg_selector"
         android:textOff=""
         android:textOn=""/>
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1.5px"

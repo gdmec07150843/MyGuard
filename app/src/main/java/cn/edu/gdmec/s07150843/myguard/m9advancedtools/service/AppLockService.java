@@ -23,19 +23,15 @@ public class AppLockService extends Service {
     private List<String> packagenames;
     private Intent intent;
     private ActivityManager am;
-<<<<<<< HEAD
     private List<ActivityManager.RunningTaskInfo> taskInfos;
-=======
-    private List<ActivityManager.RunningTaskInfo>taskInfos;
->>>>>>> origin/master
     private ActivityManager.RunningTaskInfo taskInfo;
     private String packagename;
     private String tempStopProtectPackname;
     private AppLockReceiver receiver;
     private MyObserver observer;
-    public AppLockService() {
+  /*  public AppLockService() {
     }
-
+*/
     @Override
     public IBinder onBind(Intent intent) {
      return null;
@@ -52,7 +48,7 @@ public class AppLockService extends Service {
         filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(receiver,filter);
-        intent=new Intent(AppLockService.this, EnterPswActivity.class);
+        intent=new Intent(AppLockService.this,EnterPswActivity.class);
         am= (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         startApplockService();
         super.onCreate();
@@ -85,9 +81,11 @@ public class AppLockService extends Service {
     class AppLockReceiver extends BroadcastReceiver{
         @Override
         public void onReceive(Context context, Intent intent) {
-            if("cn.itcast.mobliesafe.applock".equals(intent.getAction())){
-                tempStopProtectPackname=intent.getStringExtra("packagename");
-
+            if("cn.itcast.mobliesafe.applock".equals(intent.getAction())) {
+                tempStopProtectPackname = intent.getStringExtra("packagename");
+            }else if(Intent.ACTION_SCREEN_OFF.equals(intent.getAction())){
+                tempStopProtectPackname=null;
+                flag=false;
             }else if(Intent.ACTION_SCREEN_ON.equals(intent.getAction())){
                 if(flag==false){
                     startApplockService();

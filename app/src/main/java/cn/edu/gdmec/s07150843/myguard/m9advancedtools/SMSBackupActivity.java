@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import cn.edu.gdmec.s07150843.myguard.R;
@@ -35,28 +36,16 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_smsbackup);
-
-        setContentView(R.layout.activity_smsbackup);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-
         setContentView(R.layout.activity_smsbackup);
         smsBackUpUtils=new SmsBackUpUtils();
         initView();
     }
 
     private void initView() {
-
         findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
-        ((TextView)findViewById(R.id.tv_title)).setText("短信备份");
-
-        findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
-        ImageView mLeft_Imgv=(ImageView)findViewById(R.id.imgv_leftbtn);
         ((TextView)findViewById(R.id.tv_title)).setText("短息备份");
-
         mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
 
@@ -92,43 +81,55 @@ public class SMSBackupActivity extends AppCompatActivity implements View.OnClick
                        public void run(){
                            try {
                                boolean backUpSms = smsBackUpUtils.backUpSms(SMSBackupActivity.this, new SmsBackUpUtils.BackupStatusCallback() {
+
                                    @Override
-                                   public void beforeSmsBackup(int process) {
+                                   public void onSmsBackup(int process) {
                                        try {
                                            mProgressButton.setProcess(process);
                                        } catch (IllegalAccessException e) {
                                            e.printStackTrace();
                                        }
+
                                    }
 
                                    @Override
-                                   public void onSmsBackup(int size) {
-                                       if(size<=0){
-                                           flag=false;
+                                   public void beforeSmsBackup(int size) {
+                                       if (size <= 0) {
+                                           flag = false;
                                            smsBackUpUtils.setFlag(flag);
-                                           UIUtils.showToast(SMSBackupActivity.this,"你还没有短信");
+                                           UIUtils.showToast(SMSBackupActivity.this, "你还没有短信");
                                            handler.sendEmptyMessage(CHANGE_BUTTON_TEXT);
 
-                                       }else{
+                                       } else {
                                            try {
                                                mProgressButton.setMax(size);
                                            } catch (IllegalAccessException e) {
                                                e.printStackTrace();
                                            }
+
                                        }
                                    }
-                               });
-                               if(backUpSms){
-                                   UIUtils.showToast(SMSBackupActivity.this,"备份成功");
 
-                               }else{
-                                   UIUtils.showToast(SMSBackupActivity.this,"备份失败");
+                               });
+                               if (backUpSms) {
+                                   UIUtils.showToast(SMSBackupActivity.this, "备份成功");
+
+                               } else {
+                                   UIUtils.showToast(SMSBackupActivity.this, "备份失败");
                                }
+                           }catch (FileNotFoundException e) {
+                               e.printStackTrace();
+                               UIUtils.showToast(SMSBackupActivity.this,"文件生成失败");
+                           }catch (IllegalStateException e){
+                               e.printStackTrace();
+                               UIUtils.showToast(SMSBackupActivity.this,"SD卡不可用或SD卡内存不足");
                            } catch (IOException e) {
                                e.printStackTrace();
+                               UIUtils.showToast(SMSBackupActivity.this,"读写错误");
                            }
                        }
                  }.start();
+                break;
         }
     }
 }

@@ -37,7 +37,7 @@ public class AppUnLockFragment extends Fragment{
     private AppLockAdapter adapter;
     private AppLockDao dao;
     private Uri uri=Uri.parse("content://com.itcast.mobilesafe.applock");
-    private List<AppInfo>appInfos;
+    private List<AppInfo> appInfos;
     private Handler mhandler=new Handler() {
         public void handleMessage(Message msg){
             switch (msg.what){
@@ -70,6 +70,7 @@ public class AppUnLockFragment extends Fragment{
         dao=new AppLockDao(getActivity());
         appInfos= AppInfoParser.getAppInfos(getActivity());
         fillData();
+        initListener();
         super.onResume();
         getActivity().getContentResolver().registerContentObserver(uri, true, new ContentObserver(new Handler()) {
 
@@ -101,7 +102,7 @@ public class AppUnLockFragment extends Fragment{
     private void initListener(){
         mUnLockLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, final int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 if(unlockApps.get(position).packageName.equals("cn.itcast.mobliesafe")){
                     return;
                 }

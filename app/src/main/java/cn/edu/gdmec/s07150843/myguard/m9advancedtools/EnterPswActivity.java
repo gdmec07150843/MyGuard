@@ -34,8 +34,8 @@ public class EnterPswActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_enter_psw);
         sp = getSharedPreferences("config", MODE_PRIVATE);
         password = sp.getString("PhoneAntiTheftPWD",null);

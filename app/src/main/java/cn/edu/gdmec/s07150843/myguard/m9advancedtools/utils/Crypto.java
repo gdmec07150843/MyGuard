@@ -11,6 +11,7 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * Created by chen on 2016/12/20.
  */
+
 public class Crypto {
 
     public static String encrypt(String seed,String plain) throws Exception{

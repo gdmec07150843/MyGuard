@@ -61,7 +61,7 @@ public class TrafficMonitoringActivity extends AppCompatActivity implements View
     }
 
     private void initView() {
-        findViewById(R.id.r1_titlebar).setBackgroundColor(
+        findViewById(R.id.rl_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.light_green));
         ImageView mLeftImgv = (ImageView) findViewById(R.id.imgv_leftbtn);
         ((TextView) findViewById(R.id.tv_title)).setText("流量监控");

@@ -16,7 +16,7 @@ public class AntiVirusDao {
     private static String dbname;
     public AntiVirusDao(Context context) {
         this.context = context;
-        dbname = "/data/datar/" + context.getPackageName() + "/files/antivirus.db";
+        dbname = "/data/data/" + context.getPackageName() + "/files/antivirus.db";
     }
 
         public String checkVirus(String md5) {
@@ -75,7 +75,7 @@ public class AntiVirusDao {
                 values. put ("md5", md5) ;
                 values.put("desc", desc);
                 values.put("type", 6);
-                values. put ("name", "Android. Hack. i22hkt. a");
+                values. put ("name", "Android.Hack.i22hkt.a");
                 db.insert("datable", null, values);
                 db. close();
 

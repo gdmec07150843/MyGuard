@@ -11,6 +11,7 @@ public class NumBelongtoDao {
     public static String getLocation(String phonenumber) {
         String location = phonenumber;
 
+
         SQLiteDatabase db = SQLiteDatabase.openDatabase("/data/data/cn.edu.gdmec.s07150843.myguard/files/address.db", null, SQLiteDatabase.OPEN_READONLY);
 
         if (phonenumber.matches("^1[34578]\\d{9}$")){

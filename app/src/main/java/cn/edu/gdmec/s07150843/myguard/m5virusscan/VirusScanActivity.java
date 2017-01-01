@@ -31,7 +31,7 @@ public class VirusScanActivity extends AppCompatActivity implements View. OnClic
 
         mSP = getSharedPreferences ("config", MODE_PRIVATE) ;
 
-        copyDB ("antivirus. db") ;
+        copyDB ("antivirus.db") ;
         initView();
     }
 
@@ -84,7 +84,7 @@ public class VirusScanActivity extends AppCompatActivity implements View. OnClic
         mLeftImgv. setOnClickListener (this) ;
         mLeftImgv. setImageResource (R. drawable. back) ;
         mLastTimeTV = (TextView) findViewById (R. id. tv_lastscantime) ;
-        findViewById (R.id.rl_allscanvirus). setOnClickListener (this) ;
+        findViewById (R. id.rl_allscanvirus). setOnClickListener (this) ;
 
     }
 

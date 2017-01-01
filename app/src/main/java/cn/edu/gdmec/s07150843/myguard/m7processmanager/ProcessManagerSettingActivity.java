@@ -34,7 +34,6 @@ public class ProcessManagerSettingActivity extends AppCompatActivity implements 
 
     private void initView(){
 
-        findViewById(R. id. rl_titlebar). setBackgroundColor(
 
         findViewById(R. id. rl_titlebar). setBackgroundColor(
 
