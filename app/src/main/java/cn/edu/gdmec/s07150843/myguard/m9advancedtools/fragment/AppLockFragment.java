@@ -36,10 +36,10 @@ public class AppLockFragment extends Fragment {
     private AppLockDao dao;
     private Uri uri = Uri.parse("content://com.itcast.mobilesafe.applock");
     /*  private List<AppInfo> appInfos;*/
-    private Handler mHandler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
+    private Handler mhandler = new Handler() {
+        public void handleMessage(Message msg) {
             switch (msg.what) {
-                case 10:
+                case 100:
                     mLockApps.clear();
                     mLockApps.addAll((List<AppInfo>) msg.obj);
                     if (adapter == null) {
@@ -48,13 +48,13 @@ public class AppLockFragment extends Fragment {
                     } else {
                         adapter.notifyDataSetChanged();
                     }
-                    mLockTV.setText("加锁应用" + mLockApps.size() + "个");
+                    mLockTV.setText("未加锁应用" + mLockApps.size() + "个");
                     break;
             }
 
         }
     };
-  private List<AppInfo>  appInfos;
+  private List<AppInfo>appInfos;
 
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
@@ -79,27 +79,26 @@ public class AppLockFragment extends Fragment {
         super.onResume();
     }
     private void fillData(){
-        final List<AppInfo> aInfos=new ArrayList<AppInfo>();
+        final List<AppInfo>aInfos=new ArrayList<AppInfo>();
         new Thread(){
-            public void run() {
-                for (AppInfo appInfo : appInfos) {
-                    if (dao.find(appInfo.packageName)) {
-                        appInfo.isLock = true;
+            public void run(){
+                for(AppInfo appInfo : appInfos){
+                    if(dao.find(appInfo.packageName)){
+                        appInfo.isLock=true;
                         aInfos.add(appInfo);
                     }
                 }
-                Message msg = new Message();
-                msg.obj = aInfos;
-                msg.what = 10;
-                mHandler.sendMessage(msg);
-
+                Message msg=new Message();
+                msg.obj=aInfos;
+                msg.what=10;
+                mhandler.sendMessage(msg);
             }
         }.start();
     }
     private void initListener(){
         mLockLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> partent, View view, final int position, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
                 TranslateAnimation ta=new TranslateAnimation(Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,-1.0f,Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,0);
                        ta.setDuration(300);
                 view.startAnimation(ta);

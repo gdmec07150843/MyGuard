@@ -30,18 +30,18 @@ public class ProcessManagerAdapter extends BaseAdapter {
 	public ProcessManagerAdapter(Context context, List<TaskInfo> userTaskInfos, List<TaskInfo> sysTaskInfo) {
         super ();
         this.context = context;
-        this.mUsertaskInfos=userTaskInfos;
-        this.mSystaskInfos=sysTaskInfo;
-        mSP = context. getSharedPreferences("config",Context.MODE_PRIVATE);
+        this.mUsertaskInfos	=	userTaskInfos;
+        this.mSystaskInfos	=	sysTaskInfo;
+        mSP = context. getSharedPreferences("config",Context. MODE_PRIVATE);
         }
 
-    @Override
+
     public	int	getCount()	{
 
         if (mSystaskInfos. size() >0 & mSP. getBoolean("showSystemProcess",true)) {
             return mUsertaskInfos. size()+mSystaskInfos. size()+2;
             }else{
-            return mUsertaskInfos.size()+1;
+            return mUsertaskInfos.	size()+1;
             }
         }
 
@@ -51,7 +51,7 @@ public class ProcessManagerAdapter extends BaseAdapter {
             return null;
             } else if (position <= mUsertaskInfos. size ()) {
 
-            return mUsertaskInfos.get (position	-1);
+            return mUsertaskInfos.	get (position	-1);
             }else{
 
             return mSystaskInfos. get(position-mUsertaskInfos. size() -2);
@@ -77,7 +77,7 @@ public class ProcessManagerAdapter extends BaseAdapter {
         TaskInfo taskInfo =	null;
         if (position <= mUsertaskInfos. size()){
             taskInfo = mUsertaskInfos. get(position-1);
-            }else if(mSystaskInfos. size ()>0)	{
+            }	else	if	(mSystaskInfos. size ()	>0)	{
             taskInfo = mSystaskInfos. get(position-mUsertaskInfos. size()-2);
             }
         ViewHolder holder =	null;
@@ -86,35 +86,34 @@ public class ProcessManagerAdapter extends BaseAdapter {
             }else{
             convertView = View. inflate(context, R. layout. item_processmanager_list, null);
             holder = new ViewHolder();
-            holder. mAppIconImgv = (ImageView)	convertView.findViewById(R.id.imgv_appicon_processmana);
-            holder. mAppMemoryTV = (TextView)	convertView.findViewById(R.id.tv_appmemory_processmana);
-            holder. mAppNameTV = (TextView) convertView. findViewById(R.id.tv_appname_processmana);
-            holder. mCheckBox = (CheckBox) convertView. findViewById(R.id.checkbox);
+            holder. mAppIconImgv = (ImageView)convertView.findViewById(R. id.imgv_appicon_processmana);
+            holder. mAppMemoryTV = (TextView)convertView.findViewById(R. id.tv_appmemory_processmana);
+            holder. mAppNameTV = (TextView)convertView.findViewById(R. id.tv_appname_processmana);
+            holder. mCheckBox = (CheckBox)convertView. findViewById(R. id. checkbox);
             convertView. setTag(holder);
             }
         if (taskInfo != null) {
-            holder.mAppNameTV.setText(taskInfo.appName);
-            holder.mAppMemoryTV.setText("占用内存：" + Formatter.formatFileSize(context, taskInfo.appMemory));
-            holder.mAppIconImgv.setImageDrawable(taskInfo.appIcon);
-                if (taskInfo.packageName.equals(context.getPackageName())) {
-                    holder.mCheckBox.setVisibility(View.GONE);
-                } else {
-                    holder.mCheckBox.setVisibility(View.VISIBLE);
+            holder. mAppNameTV. setText(taskInfo. appName);
+            holder. mAppMemoryTV. setText ("占用内存："+Formatter. formatFileSize (context, taskInfo. appMemory));
+            holder. mAppIconImgv. setImageDrawable(taskInfo. appIcon);
+            if(taskInfo. packageName. equals(context. getPackageName())) {
+                holder. mCheckBox. setVisibility(View. GONE);
+                }else {
+                holder. mCheckBox. setVisibility(View. VISIBLE);
                 }
-                holder.mCheckBox.setChecked(taskInfo.isChecked);
+            holder. mCheckBox. setChecked(taskInfo. isChecked);
             }
-
         return convertView;
         }
 
     private	TextView getTextView() {
         TextView tv = new TextView(context);
-        tv. setBackgroundColor(context. getResources().getColor(R.color.graye5));
-        tv. setPadding(DensityUtil.dip2px(context,5),
-                DensityUtil.dip2px(context,5),
-                DensityUtil.dip2px(context,5),
-                DensityUtil.dip2px(context,5));
-        tv. setTextColor(context. getResources().getColor(R. color.black));
+        tv. setBackgroundColor(context. getResources().getColor(R. color. graye5));
+        tv. setPadding(DensityUtil. dip2px(context,	5),
+                DensityUtil. dip2px(context, 5),
+                DensityUtil. dip2px(context, 5),
+                DensityUtil. dip2px(context, 5));
+        tv. setTextColor(context. getResources(). getColor(R. color.black));
         return tv;
     }
     static class ViewHolder{

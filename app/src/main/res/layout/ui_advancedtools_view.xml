@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="55dp">
+<<<<<<< HEAD
  <ImageView
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
@@ -14,20 +15,51 @@
         android:layout_width="13dp"
         android:layout_height="20dp"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:layout_marginRight="20dp"
         android:background="@drawable/right_arrows_red"
         android:id="@+id/imageView1"
         />
+=======
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgv_left"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"/>
+
+    <ImageView
+        android:layout_width="13dp"
+        android:layout_height="20dp"
+        android:id="@+id/imageView1"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/right_arrows_red"/>
+    
+>>>>>>> origin/master
     <TextView
         android:id="@+id/tv_decription"
         style="@style/textview16sp"
         android:layout_centerVertical="true"
+<<<<<<< HEAD
         android:layout_toRightOf="@+id/imgv_left"
         />
+=======
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/imgv_left"/>
+>>>>>>> origin/master
     <View
         android:layout_width="match_parent"
         android:layout_height="1.0px"
         android:background="@color/black30"
+<<<<<<< HEAD
         android:layout_alignParentBottom="true"
         />
+=======
+        android:layout_alignParentBottom="true"/>
+
+>>>>>>> origin/master
 </RelativeLayout>

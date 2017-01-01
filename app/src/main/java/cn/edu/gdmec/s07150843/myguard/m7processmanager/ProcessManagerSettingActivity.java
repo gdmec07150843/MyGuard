@@ -33,7 +33,11 @@ public class ProcessManagerSettingActivity extends AppCompatActivity implements 
         }
 
     private void initView(){
+<<<<<<< HEAD
+        findViewById(R. id. rl_titlebar). setBackgroundColor(
+=======
         findViewById(R. id. r1_titlebar). setBackgroundColor(
+>>>>>>> origin/master
                 getResources(). getColor(R. color. bright_green));
         ImageView mLeftImgv = (ImageView) findViewById(R. id. imgv_leftbtn);
         mLeftImgv. setOnClickListener(this);
@@ -42,7 +46,7 @@ public class ProcessManagerSettingActivity extends AppCompatActivity implements 
         mShowSysAppsTgb = (ToggleButton) findViewById(R. id.tgb_showsys_process);
         mKillProcessTgb = (ToggleButton) findViewById(R. id.tgb_killprocess_lockscreen);
         mShowSysAppsTgb. setChecked(mSP. getBoolean("showSystemProcess", true));
-                running = SystemInfoUtils. isServiceRunning(this,"cn.edu.gdmec.s07150843.myguard.m7processmanager.service.AutoKillProcessService");
+                running = SystemInfoUtils. isServiceRunning(this,"cn. itcast. mobliesafe. chapter07. service. AutoKillProcessService");
         mKillProcessTgb. setChecked(running);
         initListener ();
         }
@@ -66,12 +70,10 @@ public class ProcessManagerSettingActivity extends AppCompatActivity implements 
     public void	onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         switch (buttonView. getId()) {
             case R. id. tgb_showsys_process:
-                saveStatus("showSystemProcess",isChecked);
-                break;
+                saveStatus("showSystemProcess",isChecked); break;
             case R. id. tgb_killprocess_lockscreen:
-                Intent service = new Intent(this, AutoKillProcessService. class);
-            if(isChecked){
-                startService(service);
+                Intent service = new Intent(this, AutoKillProcessService. class); if(isChecked){
+                startService(service );
             }else{
                 stopService (service);
             }

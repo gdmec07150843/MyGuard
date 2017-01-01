@@ -37,13 +37,9 @@ public class ContactInfoParser {
                 },"raw_contact_id=?",new String[]{id},null);
                 while (dataCursor.moveToNext()){
                     String data1=dataCursor.getString(0);
-                    String mimetype=dataCursor.getString(1);
-                    if ("vnd.android.cursor.item/name".equals(mimetype)){
-                        System.out.println("姓名="+data1);
-                        info.name=data1;
-                    }else if("vnd.android.cursor.item/phone_v2"
-                            .equals(mimetype)){
-                        System.out.println("电话="+data1);
+                    String minmetype=dataCursor.getString(1);
+                    if ("vnd.android.cursor.item/name".equals(minmetype)){
+                        System.out.println("姓名: "+data1);
                         info.phone=data1;
                     }
                 }

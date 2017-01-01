@@ -114,7 +114,7 @@ public class CleanCacheActivity extends AppCompatActivity implements View. OnCli
         }
 
         private void initView() {
-            findViewById(R.id.r1_titlebar).setBackgroundColor(
+            findViewById(R.id.rl_titlebar).setBackgroundColor(
                     getResources(). getColor (R. color.rose_red)) ;
             ( (TextView) findViewById (R. id. tv_title)). setText ("缓存处理") ;
             ImageView mLeftImgv = (ImageView) findViewById (R. id.imgv_leftbtn) ;

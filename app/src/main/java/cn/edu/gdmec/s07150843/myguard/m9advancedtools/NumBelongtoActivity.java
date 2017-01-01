@@ -41,7 +41,11 @@ public class NumBelongtoActivity extends AppCompatActivity implements View.OnCli
 
     }
     private void initView() {
+<<<<<<< HEAD
         findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
+=======
+        findViewById(R.id.r1_titlebar).setBackgroundColor(getResources().getColor(R.color.bright_red));
+>>>>>>> origin/master
         ImageView mLeftImgv=(ImageView)findViewById(R.id.imgv_leftbtn);
         ((TextView)findViewById(R.id.tv_title)).setText("号码归属地查询");
         mLeftImgv.setOnClickListener(this);

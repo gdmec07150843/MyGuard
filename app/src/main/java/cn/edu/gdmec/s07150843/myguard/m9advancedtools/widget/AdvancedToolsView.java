@@ -25,7 +25,12 @@ public class AdvancedToolsView extends RelativeLayout{
         super(context);
         init(context);
     }
-  public AdvancedToolsView(Context context, AttributeSet attrs,int defStyle){
+   public AdvancedToolsView(Context context,AttributeSet attrs,int defStyle){
+       super(context,attrs,defStyle);
+       init(context);
+   }
+
+  public AdvancedToolsView(Context context, AttributeSet attrs){
       super(context,attrs);
       TypedArray mTypeArray=context.obtainStyledAttributes(attrs, R.styleable.AdvancedToolsView);
       desc=mTypeArray.getString(R.styleable.AdvancedToolsView_desc);
